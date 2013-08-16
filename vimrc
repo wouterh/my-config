@@ -12,7 +12,8 @@ set fileformat=unix   " alleen LF op het einde van een regel
 au BufEnter * set ts=2 noexpandtab ai
 
 " Python
-au BufEnter * set ts=2 expandtab sw=2 cindent
+" PEP 8 says max. 79 chars on a line
+au BufEnter * set ts=2 expandtab sw=2 cindent colorcolumn=80
 
 " Prolog, Demoen wil acht spaties of een tab
 au BufEnter *.pl set ts=8 noexpandtab
