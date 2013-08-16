@@ -13,7 +13,7 @@ au BufEnter * set ts=2 noexpandtab ai colorcolumn
 
 " Python
 " PEP 8 says max. 79 chars on a line
-au BufEnter *.py set ts=4 expandtab sw=4 cindent colorcolumn=80
+au BufEnter *.py set ts=4 expandtab sw=4 cindent colorcolumn=80 fileencoding=utf8
 
 " Prolog, Demoen wil acht spaties of een tab
 au BufEnter *.pl set ts=8 noexpandtab
