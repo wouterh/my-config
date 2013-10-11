@@ -1,3 +1,17 @@
+" VUNDLE - DO THIS FIRST
+" $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+filetype off                   " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My bundles
+Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+Bundle 'scrooloose/nerdtree'
+
 set sm                " search magic
 set nohls             " niet kleuren bij zoeken
 set tabstop=2         " 1 tab = 2 spaties
@@ -9,7 +23,7 @@ set number            " regelnummers
 set fileformat=unix   " alleen LF op het einde van een regel
 
 " Default settings
-au BufEnter * set ts=2 noexpandtab ai colorcolumn
+au BufEnter * set ts=2 noexpandtab ai colorcolumn=
 
 " Python
 " PEP 8 says max. 79 chars on a line
@@ -132,5 +146,9 @@ set complete-=k complete+=k
 :imap <F2> <ESC>:!
 
 " pdflatex ipv latex
-"let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 "let g:Tex_ViewRule_pdf = 'kpdf'
+
+" make sure we can type the é
+imap <buffer> <leader>it <Plug>Tex_InsertItemOnThisLine
