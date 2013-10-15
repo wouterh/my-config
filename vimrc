@@ -11,6 +11,7 @@ Bundle 'gmarik/vundle'
 " My bundles
 Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 Bundle 'scrooloose/nerdtree'
+Bundle 'steffanc/cscopemaps.vim'
 
 set sm                " search magic
 set nohls             " niet kleuren bij zoeken
