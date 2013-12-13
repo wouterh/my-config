@@ -24,11 +24,11 @@ set number            " regelnummers
 set fileformat=unix   " alleen LF op het einde van een regel
 
 " Default settings
-au BufEnter * set ts=2 noexpandtab ai colorcolumn=
+au BufEnter * set ts=2 noexpandtab ai
 
 " Python
 " PEP 8 says max. 79 chars on a line
-au BufEnter *.py set ts=4 expandtab sw=4 cindent colorcolumn=80 fileencoding=utf8
+au BufEnter *.py set ts=4 expandtab sw=4 cindent fileencoding=utf8
 
 " Prolog, Demoen wil acht spaties of een tab
 au BufEnter *.pl set ts=8 noexpandtab
@@ -44,6 +44,12 @@ au BufEnter *Makefile* set noexpandtab
 
 " Lijnafbreking voor latex
 au BufEnter *.tex set textwidth=80
+
+" Colorcolumn
+if exists('+colorcolumn')
+	au BufEnter * set colorcolumn=
+	au BufEnter *.py set colorcolumn=80
+endif
 
 " Indentatie
 set nocp incsearch
@@ -153,3 +159,8 @@ let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 
 " make sure we can type the é
 imap <buffer> <leader>it <Plug>Tex_InsertItemOnThisLine
+
+" Source per directory settings
+if filereadable(".vimrc.local")
+  source .vimrc.local
+endif
