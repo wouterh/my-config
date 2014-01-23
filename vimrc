@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 Bundle 'scrooloose/nerdtree'
 Bundle 'steffanc/cscopemaps.vim'
+Bundle 'jtratner/vim-flavored-markdown'
 
 set sm                " search magic
 set nohls             " niet kleuren bij zoeken
@@ -153,3 +154,9 @@ let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 
 " make sure we can type the é
 imap <buffer> <leader>it <Plug>Tex_InsertItemOnThisLine
+
+" For github flavored markdown
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+augroup END
