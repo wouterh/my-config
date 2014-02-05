@@ -46,6 +46,9 @@ au BufEnter *Makefile* set noexpandtab
 " Lijnafbreking voor latex
 au BufEnter *.tex set textwidth=80
 
+" Markdown
+au BufEnter *.md set ts=4 expandtab sw=4 cindent fileencoding=utf8
+
 " Colorcolumn
 if exists('+colorcolumn')
 	au BufEnter * set colorcolumn=
