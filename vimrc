@@ -9,10 +9,25 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My bundles
+" Sensible defaults
+" Also do: mkdir -p ~/.cache/vim/{swap,backup,undo}
+Bundle 'tpope/vim-sensible'
+" Latex
 Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+" A tree for navigating files
 Bundle 'scrooloose/nerdtree'
-Bundle 'steffanc/cscopemaps.vim'
+" cscope
+" Bundle 'steffanc/cscopemaps.vim'
+" Support for github flavored markdown
 Bundle 'jtratner/vim-flavored-markdown'
+" Find files to open easily
+Bundle 'kien/ctrlp.vim'
+" Some easy to use mappings
+" Bundle 'tpope/vim-unimpaired'
+" Switch between headers and implementation
+" Bundle 'vim-scripts/a.vim'
+" C code completion
+" Bundle 'Rip-Rip/clang_complete'
 
 set sm                " search magic
 set nohls             " niet kleuren bij zoeken
