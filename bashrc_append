@@ -1,0 +1,12 @@
+# Append this to .bashrc
+# Then put all your bashrc additions in seperate .sh files in ~/.bashrc.d
+
+if [ -d $HOME/.bashrc.d ]; then
+    for i in $HOME/.bashrc.d/*.sh; do
+        if [ -r $i ]; then
+            . $i
+        fi
+    done
+    unset i
+fi
+
