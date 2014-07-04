@@ -151,8 +151,8 @@ set complete-=k complete+=k
 
 " Keyboard shortcuts
 " make uitvoeren
-:map <F10> :w<CR>:set makeprg=make<CR>:make<CR><CR>
-:imap <F10> <ESC>:w<CR>:set makeprg=make<CR>:make<CR><CR>i
+" :map <F10> :w<CR>:set makeprg=make<CR>:make<CR><CR>
+" :imap <F10> <ESC>:w<CR>:set makeprg=make<CR>:make<CR><CR>i
 " dvi tonen van huidige file (bij LaTeX)
 :map <F11> :w<CR>\lv<CR>
 :imap <F11> <ESC>:w<CR>\lv<CR>i
@@ -170,6 +170,9 @@ set complete-=k complete+=k
 " commando uitvoeren
 :map <F2> :!
 :imap <F2> <ESC>:!
+" Huidige file uitvoeren
+:nnoremap <F10> :!%:p<CR>
+:inoremap <F10> <ESC>:!%:p<CR>i
 
 " pdflatex ipv latex
 let g:Tex_DefaultTargetFormat = 'pdf'
