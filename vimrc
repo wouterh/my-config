@@ -22,6 +22,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jtratner/vim-flavored-markdown'
 " Find files to open easily
 Bundle 'kien/ctrlp.vim'
+" Ctrl-p extension for use with tabs
+Bundle 'DavidEGx/ctrlp-smarttabs'
 " Some easy to use mappings
 " Bundle 'tpope/vim-unimpaired'
 " Switch between headers and implementation
@@ -167,6 +169,8 @@ set complete-=k complete+=k
 :imap <F3> <ESC>:w<CR>:tabp<CR>i
 :map <F4> :w<CR>:tabn<CR>
 :imap <F4> <ESC>:w<CR>:tabn<CR>i
+:map <F5> :CtrlPSmartTabs<CR>
+:imap <F5> <ESC>:w<CR>:CtrlPSmartTabs<CR>
 " commando uitvoeren
 :map <F2> :!
 :imap <F2> <ESC>:!
@@ -187,6 +191,13 @@ augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
+
+" crtl-p configuration
+" open files in new tab
+let g:ctrlp_prompt_mappings = {
+  \ 'AcceptSelection("e")': [],
+  \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
+  \ }
 
 " Source per directory settings
 if filereadable(".vimrc.local")
