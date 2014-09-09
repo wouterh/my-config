@@ -30,6 +30,7 @@ Bundle 'DavidEGx/ctrlp-smarttabs'
 " Bundle 'vim-scripts/a.vim'
 " C code completion
 " Bundle 'Rip-Rip/clang_complete'
+Bundle 'djoshea/vim-autoread'
 
 set sm                " search magic
 set nohls             " niet kleuren bij zoeken
