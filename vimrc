@@ -1,37 +1,42 @@
+set nocompatible
 " VUNDLE - DO THIS FIRST
 " $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " My bundles
 " Sensible defaults
 " Also do: mkdir -p ~/.cache/vim/{swap,backup,undo}
-Bundle 'tpope/vim-sensible'
+Plugin 'tpope/vim-sensible'
 " Latex
-Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex'
 " A tree for navigating files
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 " cscope
-" Bundle 'steffanc/cscopemaps.vim'
+" Plugin 'steffanc/cscopemaps.vim'
 " Support for github flavored markdown
-Bundle 'jtratner/vim-flavored-markdown'
+Plugin 'jtratner/vim-flavored-markdown'
 " Find files to open easily
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 " Ctrl-p extension for use with tabs
-Bundle 'DavidEGx/ctrlp-smarttabs'
+Plugin 'DavidEGx/ctrlp-smarttabs'
 " Some easy to use mappings
-" Bundle 'tpope/vim-unimpaired'
+" Plugin 'tpope/vim-unimpaired'
 " Switch between headers and implementation
-" Bundle 'vim-scripts/a.vim'
+" Plugin 'vim-scripts/a.vim'
 " C code completion
-" Bundle 'Rip-Rip/clang_complete'
-Bundle 'djoshea/vim-autoread'
+" Plugin 'Rip-Rip/clang_complete'
+Plugin 'djoshea/vim-autoread'
 
+call vundle#end()
+filetype plugin indent on
+
+" Personal configuration
 set sm                " search magic
 set nohls             " niet kleuren bij zoeken
 set tabstop=2         " 1 tab = 2 spaties
