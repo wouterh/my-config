@@ -38,7 +38,8 @@ filetype plugin indent on
 
 " Personal configuration
 set sm                " search magic
-set nohls             " niet kleuren bij zoeken
+set hls               " kleuren bij zoeken
+set incsearch         " incremental search
 set tabstop=2         " 1 tab = 2 spaties
 set textwidth=0       " lijnen niet afbreken
 set noexpandtab       " vervang tabs niet door spaties
@@ -71,6 +72,9 @@ au BufEnter *.tex set textwidth=80
 
 " Markdown
 au BufEnter *.md set ts=4 expandtab sw=4 cindent fileencoding=utf8
+
+" YAML
+au BufEnter *.yaml set ts=2 expandtab sw=2 cindent fileencoding=utf8
 
 " Colorcolumn
 if exists('+colorcolumn')
