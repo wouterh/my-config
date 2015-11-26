@@ -32,6 +32,8 @@ Plugin 'DavidEGx/ctrlp-smarttabs'
 " C code completion
 " Plugin 'Rip-Rip/clang_complete'
 Plugin 'djoshea/vim-autoread'
+" Coffeescript syntax highlighting
+Plugin 'kchmck/vim-coffee-script'
 
 call vundle#end()
 filetype plugin indent on
@@ -74,7 +76,7 @@ au BufEnter *.tex set textwidth=80
 au BufEnter *.md set ts=4 expandtab sw=4 cindent fileencoding=utf8
 
 " YAML
-au BufEnter *.yaml set ts=2 expandtab sw=2 cindent fileencoding=utf8
+au BufEnter *.{yaml,yml} set ts=2 expandtab sw=2 cindent fileencoding=utf8
 
 " Colorcolumn
 if exists('+colorcolumn')
