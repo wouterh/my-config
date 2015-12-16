@@ -81,6 +81,9 @@ au BufEnter *.{yaml,yml} set ts=2 expandtab sw=2 cindent fileencoding=utf8
 " Coffee
 au BufEnter *.coffee set ts=2 expandtab sw=2 cindent fileencoding=utf8
 
+" HAML
+au BufEnter *.haml set ts=2 expandtab sw=2 cindent fileencoding=utf8
+
 " Colorcolumn
 if exists('+colorcolumn')
 	au BufEnter * set colorcolumn=
