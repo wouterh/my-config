@@ -17,6 +17,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex'
 " A tree for navigating files
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 " cscope
 " Plugin 'steffanc/cscopemaps.vim'
 " Support for github flavored markdown
@@ -34,6 +35,8 @@ Plugin 'DavidEGx/ctrlp-smarttabs'
 Plugin 'djoshea/vim-autoread'
 " Coffeescript syntax highlighting
 Plugin 'kchmck/vim-coffee-script'
+" Go
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on
@@ -200,6 +203,10 @@ set complete-=k complete+=k
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_pdf = 'xelatex -interaction=nonstopmode $*'
 "let g:Tex_ViewRule_pdf = 'kpdf'
+
+" NERDTree
+:map <Leader>n <plug>NERDTreeTabsToggle<CR>
+:imap <Leader>n <ESC><plug>NERDTreeTabsToggle<CR>i
 
 " make sure we can type the é
 imap <buffer> <leader>it <Plug>Tex_InsertItemOnThisLine
