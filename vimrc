@@ -23,9 +23,9 @@ Plugin 'jistr/vim-nerdtree-tabs'
 " Support for github flavored markdown
 Plugin 'jtratner/vim-flavored-markdown'
 " Find files to open easily
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 " Ctrl-p extension for use with tabs
-Plugin 'DavidEGx/ctrlp-smarttabs'
+" Plugin 'DavidEGx/ctrlp-smarttabs'
 " Some easy to use mappings
 " Plugin 'tpope/vim-unimpaired'
 " Switch between headers and implementation
@@ -81,8 +81,8 @@ au BufEnter *.md set ts=4 expandtab sw=4 cindent fileencoding=utf8
 " YAML
 au BufEnter *.{yaml,yml} set ts=2 expandtab sw=2 cindent fileencoding=utf8
 
-" Coffee
-au BufEnter *.coffee set ts=2 expandtab sw=2 cindent fileencoding=utf8
+" Coffeescript and javascript
+au BufEnter *.{coffee,js} set ts=2 expandtab sw=2 cindent fileencoding=utf8
 
 " HAML
 au BufEnter *.haml set ts=2 expandtab sw=2 cindent fileencoding=utf8
@@ -218,11 +218,17 @@ augroup markdown
 augroup END
 
 " crtl-p configuration
+
 " open files in new tab
-let g:ctrlp_prompt_mappings = {
-  \ 'AcceptSelection("e")': [],
-  \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
-  \ }
+" let g:ctrlp_prompt_mappings = {
+"  \ 'AcceptSelection("e")': [],
+"  \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
+"  \ }
+
+let g:ctrlp_working_path_mode = 'a'
+let g:ctrlp_custom_ignore = {
+ \ 'dir':'node_modules'
+ \ }
 
 " Source per directory settings
 if filereadable(".vimrc.local")
