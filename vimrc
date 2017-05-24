@@ -37,6 +37,8 @@ Plugin 'djoshea/vim-autoread'
 Plugin 'kchmck/vim-coffee-script'
 " Go
 Plugin 'fatih/vim-go'
+" EditorConfig
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -45,47 +47,9 @@ filetype plugin indent on
 set sm                " search magic
 set hls               " kleuren bij zoeken
 set incsearch         " incremental search
-set tabstop=2         " 1 tab = 2 spaties
-set textwidth=0       " lijnen niet afbreken
-set noexpandtab       " vervang tabs niet door spaties
 set mouse=n				    " mouse deftig instellen
 set pastetoggle=<F9>  " toggle tussen pastemode en niet-pastemode
 set number            " regelnummers
-set fileformat=unix   " alleen LF op het einde van een regel
-
-" Default settings
-au BufEnter * set ts=2 noexpandtab ai
-
-" Python
-" PEP 8 says max. 79 chars on a line
-au BufEnter *.{py,rb,erb,js} set ts=4 expandtab sw=4 cindent fileencoding=utf8
-
-" Prolog, Demoen wil acht spaties of een tab
-au BufEnter *.pl set ts=8 noexpandtab
-" Haskell
-au BufEnter *.hs set ts=8
-
-" Instelling voor Gentoo ebuilds
-au BufRead,BufNewFile *.e{build,class} let is_bash=1|setfiletype sh
-au BufRead,BufNewFile *.e{build,class} set ts=4 sw=4 noexpandtab cindent
-
-" Makefiles
-au BufEnter *Makefile* set noexpandtab
-
-" Lijnafbreking voor latex
-au BufEnter *.tex set textwidth=80
-
-" Markdown
-au BufEnter *.md set ts=4 expandtab sw=4 cindent fileencoding=utf8
-
-" YAML
-au BufEnter *.{yaml,yml} set ts=2 expandtab sw=2 cindent fileencoding=utf8
-
-" Coffeescript and javascript
-au BufEnter *.{coffee,js} set ts=2 expandtab sw=2 cindent fileencoding=utf8
-
-" HAML
-au BufEnter *.haml set ts=2 expandtab sw=2 cindent fileencoding=utf8
 
 " Colorcolumn
 if exists('+colorcolumn')
