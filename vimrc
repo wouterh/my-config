@@ -39,6 +39,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'fatih/vim-go'
 " EditorConfig
 Plugin 'editorconfig/editorconfig-vim'
+" Vue
+Plugin 'posva/vim-vue'
 
 call vundle#end()
 filetype plugin indent on
@@ -76,6 +78,8 @@ set background=light
 " Syntax
 syntax on
 
+" How to show spaces and tabs in list mode
+set listchars=tab:→\ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:·
 
 " LATEX PLUGIN
 " REQUIRED. This makes vim invoke latex-suite when you open a tex file.
