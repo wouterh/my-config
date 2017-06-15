@@ -166,6 +166,9 @@ set complete-=k complete+=k
 " Huidige file uitvoeren
 " :nnoremap <F10> :!%:p<CR>
 " :inoremap <F10> <ESC>:!%:p<CR>i
+" toggle list mode
+:map <F8> :set list!<CR>
+:imap <F8> <ESC>:set list!<CR>a
 
 " pdflatex ipv latex
 let g:Tex_DefaultTargetFormat = 'pdf'
