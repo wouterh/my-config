@@ -12,20 +12,16 @@ Plugin 'gmarik/vundle'
 " My bundles
 " Sensible defaults
 " Also do: mkdir -p ~/.cache/vim/{swap,backup,undo}
-Plugin 'tpope/vim-sensible'
+" Plugin 'tpope/vim-sensible'
 " Latex
-Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex'
+" Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex'
 " A tree for navigating files
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'jistr/vim-nerdtree-tabs'
 " cscope
 " Plugin 'steffanc/cscopemaps.vim'
 " Support for github flavored markdown
-Plugin 'jtratner/vim-flavored-markdown'
-" Find files to open easily
-Plugin 'ctrlpvim/ctrlp.vim'
-" Ctrl-p extension for use with tabs
-" Plugin 'DavidEGx/ctrlp-smarttabs'
+" Plugin 'jtratner/vim-flavored-markdown'
 " Some easy to use mappings
 " Plugin 'tpope/vim-unimpaired'
 " Switch between headers and implementation
@@ -39,11 +35,12 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'fatih/vim-go'
 " EditorConfig
 Plugin 'editorconfig/editorconfig-vim'
-" Vue
-Plugin 'posva/vim-vue'
 
 call vundle#end()
 filetype plugin indent on
+
+" VIM 8 plugins
+packloadall
 
 " Personal configuration
 set sm                " search magic
@@ -56,7 +53,7 @@ set number            " regelnummers
 " Colorcolumn
 if exists('+colorcolumn')
 	au BufEnter * set colorcolumn=
-	au BufEnter *.{py,rb,erb,js} set colorcolumn=80
+	au BufEnter *.{py,rb,erb,js,ts,jsx,tsx,md} set colorcolumn=100
 endif
 
 " Indentatie
@@ -188,18 +185,19 @@ augroup markdown
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
-" crtl-p configuration
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | wincmd p | endif
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * silent NERDTreeMirror
 
-" open files in new tab
-" let g:ctrlp_prompt_mappings = {
-"  \ 'AcceptSelection("e")': [],
-"  \ 'AcceptSelection("t")': ['<cr>', '<c-m>'],
-"  \ }
-
-let g:ctrlp_working_path_mode = 'a'
-let g:ctrlp_custom_ignore = {
- \ 'dir':'node_modules'
- \ }
+" Add fzf installed using Homebrew to runtime path
+set rtp+=/usr/local/opt/fzf
+" Map C-P to :FZF
+nmap <C-P> :FZF<CR>
 
 " Source per directory settings
 if filereadable(".vimrc.local")
