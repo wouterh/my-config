@@ -1,0 +1,24 @@
+#!/bin/bash
+
+mkdir -p $HOME/.vim/pack/local/start
+cd $HOME/.vim/pack/local/start
+
+if [ ! -d editorconfig-vim ]; then
+	git clone https://github.com/editorconfig/editorconfig-vim.git
+fi
+
+if [ ! -d vim-autoread ]; then
+	git clone https://github.com/djoshea/vim-autoread.git
+fi
+
+if [ ! -d nerdtree ]; then
+	git clone https://github.com/preservim/nerdtree.git
+fi
+
+if [ ! -f fzf/plugin/fzf.vim ]; then
+	ln -s /usr/share/doc/fzf/examples fzf
+fi
+
+if [ ! -d vim-flavored-markdown ]; then
+	git clone https://github.com/jtratner/vim-flavored-markdown.git
+fi
