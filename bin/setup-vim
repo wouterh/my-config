@@ -1,24 +1,72 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-mkdir -p $HOME/.vim/pack/local/start
-cd $HOME/.vim/pack/local/start
+set +e
+proceed=1
+result=0
 
-if [ ! -d editorconfig-vim ]; then
-	git clone https://github.com/editorconfig/editorconfig-vim.git
+LOGFILE=/tmp/dotfiles-setup
+
+. $HOME/.local/lib/dotfiles/shared-functions
+
+# ensure we capture unexpected exits
+trap exit_warning EXIT
+
+echo "Running in $0 ${BASH_VERSION}" >> $LOGFILE
+
+if [[ $bootstrapping -ne 1 ]]; then
+  header "Let's setup vim ..."
+
+  notice_left "\nFeel free to follow the details by running:"
+  notice_left "${BOLD} tail -f $LOGFILE ${NORMAL}in another terminal\n"
 fi
 
-if [ ! -d vim-autoread ]; then
-	git clone https://github.com/djoshea/vim-autoread.git
+PLUGINDIR=$HOME/.vim/pack/local/start
+mkdir -p $PLUGINDIR
+
+install_vimplugins () {
+	_title_ 'Installing vim plugins'
+
+	declare -a plugins=("editorconfig/editorconfig-vim"
+											"djoshea/vim-autoread"
+											"preservim/nerdtree"
+											"vim-flavored-markdown")
+
+	for plugin in "${plugins[@]}"
+	do
+		source="https://github.com/${plugin}.git"
+		directory=${plugin#*/}
+		target="${PLUGINDIR}/${directory}"
+		echo $source $target >> $LOGFILE
+
+		if [ ! -d $target ]
+		then
+			info "Cloning plugin ${source} into ${target/$HOME/'~'}"
+			eval "git clone ${source} ${target}" &> /dev/null
+			success "plugin ${BOLD}$(basename $target)${NORMAL}: installed"
+		else
+			success "skipping plugin ${BOLD}$(basename $target)${NORMAL}: already installed"
+		fi
+	done
+}
+
+link_fzf () {	
+	_title_ 'Link fzf plugin'
+
+	if [ ! -f "${PLUGINDIR}/fzf/plugin/fzf.vim" ]; then
+		info "Linking fzf plugin to /usr/share/doc/fzf/examples"
+		eval "ln -s /usr/share/doc/fzf/examples fzf" &> /dev/null
+		success "${BOLD}fzf plugin${NORMAL}: linked"
+	else
+		success "${BOLD}fzf plugin${NORMAL}: already linked"
+	fi
+}
+
+install_vimplugins
+link_fzf
+
+trap finish EXIT
+
+if [[ $bootstrapping -ne 1 ]]; then
+  _title_ "Done... Enjoy!"
 fi
 
-if [ ! -d nerdtree ]; then
-	git clone https://github.com/preservim/nerdtree.git
-fi
-
-if [ ! -f fzf/plugin/fzf.vim ]; then
-	ln -s /usr/share/doc/fzf/examples fzf
-fi
-
-if [ ! -d vim-flavored-markdown ]; then
-	git clone https://github.com/jtratner/vim-flavored-markdown.git
-fi
