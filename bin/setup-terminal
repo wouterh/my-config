@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set +e
+proceed=1
+result=0
+
+LOGFILE=/tmp/dotfiles-setup
+
+. $HOME/.local/lib/dotfiles/shared-functions
+
+# ensure we capture unexpected exits
+trap exit_warning EXIT
+
+echo "Running in $0 ${BASH_VERSION}" >> $LOGFILE
+
+if [[ $bootstrapping -ne 1 ]]; then
+  header "Let's setup our terminal ..."
+
+  ask_sudo_password
+
+  notice_left "\nFeel free to follow the details by running:"
+  notice_left "${BOLD} tail -f $LOGFILE ${NORMAL}in another terminal\n"
+fi
+
+install_firacode() {
+	_title_ 'Installing Fira Code Font'
+	check "Fira Code" "font-installed FiraCode"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "install-firacode"
+	fi
+}
+
+install_alacritty() {
+  _title_ 'Installing alacritty'
+  check "alacritty" "command -v alacritty"
+  if [[ $proceed -ne 0 ]]; then
+    successfully "install-alacritty"
+  fi
+}
+
+install_firacode
+install_alacritty
+
+trap finish EXIT
+
+if [[ $bootstrapping -ne 1 ]]; then
+  _title_ "Done... Enjoy!"
+fi
