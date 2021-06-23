@@ -62,6 +62,7 @@ link_fzf () {
 }
 
 install_vimplugins
+install_fzf
 link_fzf
 
 trap finish EXIT
