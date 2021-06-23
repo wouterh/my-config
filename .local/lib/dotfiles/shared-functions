@@ -509,4 +509,10 @@ install_fzf() {
 	then
 		successfully "install-fzf"
 	fi
+
+	if ! ls "$HOME/.oh-my-zsh/cache/zsh_plugin_paths" > /dev/null 2>&1 || grep -q "$HOME/.oh-my-zsh/cache/zsh_plugin_paths" "FZF_BASE" > /dev/null 2>&1; then
+    tput el
+    printf "\r"
+    echo "FZF_BASE=\"/usr/share/doc/fzf/examples\"" >> $HOME/.oh-my-zsh/cache/zsh_plugin_paths
+  fi
 }
