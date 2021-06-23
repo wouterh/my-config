@@ -1,0 +1,6 @@
+# Sample gitconfig.local
+
+[user]
+  email = AUTHOREMAIL
+[credential]
+  helper = GIT_CREDENTIAL_HELPER
