@@ -23,8 +23,6 @@
 [core]
 	editor = vim
 	ignorecase = false
-[commit]
-	template = ~/.gitmessage
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52

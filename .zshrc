@@ -1,6 +1,3 @@
-# shortcut to this dotfiles path is $DOTFILES
-export DOTFILES=$HOME/.dotfiles
-
 # ensure the correct locales are used
 export LANG="nl_BE.UTF-8"
 export LC_COLLATE="nl_BE.UTF-8"
@@ -10,20 +7,9 @@ export LC_MONETARY="nl_BE.UTF-8"
 export LC_NUMERIC="nl_BE.UTF-8"
 export LC_TIME="nl_BE.UTF-8"
 
-if [[ -a "$HOME/Library/Application Support/iTerm2/DynamicProfiles/zenjoy.profile.plist" ]]; then
-	echo -e "\033]50;SetProfile=Zenjoy\a"
-	tput reset
-fi
-
 if [[ -d "$HOME/.zcompcache" ]]
 then
 	export ZSH_CACHE_DIR=$HOME/.zcompcache
-fi
-
-if [[ -a "$DOTFILES/.multiuser" ]]
-then
-	# skip verification of insecure directories (to allow multiuser setups)
-	export ZSH_DISABLE_COMPFIX="true"
 fi
 
 # Path to your oh-my-zsh configuration.
@@ -47,8 +33,7 @@ PURE_PROMPT_TERRAFORM_SYMBOL="\uf9fd"
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(brew
-				 droplr
+plugins=(droplr
 				 docker
 				 docker-compose
 				 extract
@@ -103,7 +88,7 @@ fi
 
 # all of our zsh files
 typeset -U config_files
-config_files=($DOTFILES/**/*.zsh)
+config_files=($HOME/.zsh.d/**/*.zsh)
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -144,25 +129,11 @@ if [[ -a ~/.localrc.late ]]; then
 	source ~/.localrc.late
 fi
 
-# support asdf
-if [[ -a /usr/local/opt/asdf/asdf.sh ]]; then
-	source /usr/local/opt/asdf/asdf.sh
-fi
-
-if [[ -a /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash ]]; then
-	source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
-fi
-
 # support autojump
 if command -v autojump >/dev/null 2>&1; then
-	. `brew --prefix`/etc/autojump.sh
+	. /usr/share/autojump/autojump.zsh
 fi
 
-# allow zeus and unicorn to fork
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-
-# Customize iTerm2 Touchbar integration
-export TOUCHBAR_GIT_ENABLED=true
 export GIT_UNCOMMITTED="+"
 export GIT_UNSTAGED="!"
 export GIT_UNTRACKED="?"
@@ -175,16 +146,10 @@ export YARN_ENABLED=true
 ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=(expand-or-complete)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 
-# Needed to run Helm Secrets
-if [[ -a /usr/local/opt/gnu-getopt/bin/getopt ]]
-then
-  export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
-fi
-
 # Check for update of the dotfiles
-if [ "$DISABLE_AUTO_UPDATE" != "true" ]; then
-  env DOTFILES=$DOTFILES DISABLE_UPDATE_PROMPT=$DISABLE_UPDATE_PROMPT zsh -f $DOTFILES/tools/check_for_upgrade.sh
-fi
+#if [ "$DISABLE_AUTO_UPDATE" != "true" ]; then
+#  env DOTFILES=$DOTFILES DISABLE_UPDATE_PROMPT=$DISABLE_UPDATE_PROMPT zsh -f $DOTFILES/tools/check_for_upgrade.sh
+#fi
 
 if [[ -a $HOME/.config/yarn/global/node_modules/.bin ]]; then
 	export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
