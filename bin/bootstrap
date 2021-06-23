@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+#
+# bootstrap installs things.
+
+set +e
+proceed=1
+result=0
+bootstrapping="1"
+
+DOTFILES_ROOT="$HOME/.local/lib/dotfiles"
+LOGFILE=/tmp/dotfiles-setup
+
+echo "Running in $0 ${BASH_VERSION}" >> $LOGFILE
+
+. $DOTFILES_ROOT/shared-functions
+
+# ensure we capture unexpected exits
+trap exit_warning EXIT
+
+if [[ $UPDATING -ne 1 ]]; then
+  header "Let's bootstrap your configuration..."
+else
+  mini_header "Let's update our configuration..."
+fi
+
+setup_terminal() {
+  bootstrapping=1 $HOME/bin/setup-terminal
+}
+
+setup_zsh() {
+  bootstrapping=1 $HOME/bin/setup-zsh
+}
+
+setup_locale() {
+  if [[ "`uname -s`" != "Darwin" ]]; then
+    sudo locale-gen "nl_BE.UTF-8"
+  fi
+}
+
+setup_git() {
+  user_ask_yn "Want to setup your Git profile?" "y"
+  if [[ "$user_ask_yn_result" == "y" ]]; then
+    bootstrapping=1 $HOME/bin/setup-git
+  else
+    success "Ok, skipping Git profile setup."
+  fi
+}
+
+setup_vim() {
+	bootstrapping=1 $HOME/bin/setup-vim
+}
+
+ask_sudo_password
+
+notice_left "\nFeel free to follow the details by running:"
+notice_left "${BOLD} tail -f $LOGFILE ${NORMAL}in another terminal"
+
+setup_zsh
+setup_locale
+setup_terminal
+setup_git
+setup_vim
+
+_title_ 'configuration ready & installed!'
+
+trap finish EXIT
+
+env zsh -l
