@@ -14,6 +14,8 @@ git clone https://github.com/wouterh/my-config.git .
 After checking out, various setup scripts can be run to install dependencies of
 the dot-files in this repository. See `setup-*` in `~/bin`.
 
+To bootstrap everything, run `~/bin/bootstrap`
+
 ## Inspiration
 
 This repostory is inspired by:
