@@ -8,9 +8,9 @@
 		"sway/workspaces",
 	],
 	"modules-center": [
-		"clock#2",
-		"clock#1",
-		"clock#3"
+		"custom/time",
+		"custom/day",
+		"custom/date"
 	],
 	"modules-right": [
 		"pulseaudio",
@@ -26,17 +26,22 @@
 		"format": "{name}"
 	},
 
-	"clock#1": {
+	"custom/day": {
 		"interval": 60,
-		"format": "{:%a}",
-		"tooltip": true
-	},
-	"clock#2": {
-		"format": "{:%H:%M}",
+		"exec": "date +%a",
+		"format": "{}",
 		"tooltip": false
 	},
-	"clock#3": {
-		"format": "{:%d/%m}",
+	"custom/time": {
+		"interval": 10,
+		"exec": "date +%H:%M",
+		"format": "{}",
+		"tooltip": false
+	},
+	"custom/date": {
+		"interval": 60,
+		"exec": "date +%d/%m",
+		"format": "{}",
 		"tooltip": false
 	},
 
@@ -84,6 +89,7 @@
 		"path": "/home"
 	},
 	"tray": {
-		"icon-size": 20
+		"icon-size": 20,
+		"spacing": 10
 	}
 }

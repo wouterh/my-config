@@ -9,9 +9,9 @@ window#waybar {
 }
 
 #workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
+#custom-day,
+#custom-time,
+#custom-date,
 #pulseaudio,
 #memory,
 #cpu,
@@ -59,7 +59,9 @@ window#waybar {
 	color: #e58f65;
 }
 
-#clock,
+#custom-day,
+#custom-date,
+#custom-time,
 #pulseaudio,
 #memory,
 #cpu,
