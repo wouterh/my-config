@@ -259,7 +259,7 @@ bindsym --locked $mod+w exec swaymsg "output * dpms on"
 bindsym --locked $mod+Shift+w output * dpms on
 
 # Assignments and layouts for specific apps
-# assign [app_id="firefox" title="WhatsApp.*"] workspace $ws2
+assign [app_id="firefox" name=".*WhatsApp.*"] workspace $ws2
 assign [class="discord"] workspace $ws2
 assign [class="VirtualBox Manager"] workspace $ws10
 
