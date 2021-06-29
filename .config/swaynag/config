@@ -1,0 +1,7 @@
+font=monospace
+
+[warning]
+background=e4a010
+text=fcfcfc
+border=e4a010
+button-background=8b0000
