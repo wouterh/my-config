@@ -18,7 +18,8 @@
 		"cpu",
 		"battery",
 		"disk",
-		"tray"
+		"tray",
+		"custom/logout"
 	],
 
 	"sway/workspaces": {
@@ -91,5 +92,11 @@
 	"tray": {
 		"icon-size": 20,
 		"spacing": 10
+	},
+	"custom/logout": {
+		"format": "{icon}",
+		"format-icons": "",
+		"on-click": "swaymsg exec ~/bin/sway-logout-menu",
+		"tooltip": false
 	}
 }
