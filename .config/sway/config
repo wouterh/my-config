@@ -269,6 +269,7 @@ assign [class="VirtualBox Manager"] workspace $ws10
 
 for_window [class="VirtualBox Manager"] layout tabbed
 for_window [class="1Password"] floating enable
+for_window [app_id="pavucontrol"] floating enable, resize set 25 ppt 50 ppt, move position 2290 px 30 px
 
 # Start some applications on startup
 # NOTE: commented because assigns seem to be broken when starting programs like this
