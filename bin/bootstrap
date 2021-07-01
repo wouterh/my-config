@@ -50,6 +50,14 @@ setup_vim() {
 	bootstrapping=1 $HOME/bin/setup-vim
 }
 
+setup_vscode() {
+	bootstrapping=1 $HOME/bin/setup-vscode
+}
+
+setup_sway() {
+	bootstrapping=1 $HOME/bin/setup-sway
+}
+
 ask_sudo_password
 
 notice_left "\nFeel free to follow the details by running:"
@@ -60,6 +68,8 @@ setup_locale
 setup_terminal
 setup_git
 setup_vim
+setup_vscode
+setup_sway
 
 _title_ 'configuration ready & installed!'
 

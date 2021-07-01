@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+
+set +e
+proceed=1
+result=0
+
+LOGFILE=/tmp/dotfiles-setup
+
+DOTFILES_ROOT=$HOME/.local/lib/dotfiles
+. $DOTFILES_ROOT/shared-functions
+
+# ensure we capture unexpected exits
+trap exit_warning EXIT
+
+echo "Running in $0 ${BASH_VERSION}" >> $LOGFILE
+
+if [[ $bootstrapping -ne 1 ]]; then
+  header "Let's setup Sway Window Manager..."
+
+  ask_sudo_password
+
+  notice_left "\nFeel free to follow the details by running:"
+  notice_left "${BOLD} tail -f $LOGFILE ${NORMAL}in another terminal\n"
+fi
+
+install_sway() {
+	_title_ 'Installing sway and friends'
+
+	check "sway" "command -v sway"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo add-apt-repository -y ppa:wouterh/sway && sudo apt-get install -y sway"
+	fi
+
+  check "swayidle" "command -v swayidle"
+  if [[ $proceed -ne 0 ]]; then
+    successfully "sudo apt-get install -y swayidle"
+  fi
+
+  check "swaylock" "command -v swaylock"
+  if [[ $proceed -ne 0 ]]; then
+    successfully "sudo apt-get install -y swaylock"
+  fi
+
+  check "grimshot" "command -v grimshot"
+  if [[ $proceed -ne 0 ]]; then
+    successfully "sudo apt-get install -y grimshot"
+  fi
+
+  check "waybar" "command -v waybar"
+  if [[ $proceed -ne 0 ]]; then
+    successfully "sudo apt-get install -y waybar"
+  fi
+}
+
+
+fix_sway_session() {
+	_title_ 'Fixing sway wayland session'
+
+	check "sway wrapper" "[[ -e /usr/local/bin/sway-in-shell ]]"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo cp $DOTFILES_ROOT/sway-in-shell /usr/local/bin"
+	fi
+
+	check "sway wayland session" "grep -q sway-in-shell /usr/share/wayland-sessions/sway.desktop"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo cp $DOTFILES_ROOT/sway.desktop /usr/share/wayland-sessions/sway.desktop"
+	fi
+}
+
+install_sway
+fix_sway_session
+
+trap finish EXIT
+
+if [[ $bootstrapping -ne 1 ]]; then
+  _title_ "Done... Enjoy!"
+fi
