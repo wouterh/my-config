@@ -89,7 +89,7 @@ input * {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec $HOME/bin/sway-logout-menu
+    bindsym $mod+Shift+e exec sway-logout-menu
 
 # Moving around:
 #
@@ -217,22 +217,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
 bar {
-    # position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    #status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    #colors {
-    #    statusline #ffffff
-    #    background #323232
-    #    inactive_workspace #32323200 #32323200 #5c5c5c
-    #}
     swaybar_command waybar
 
     position top
@@ -251,11 +236,12 @@ bindsym $mod+Shift+s sticky toggle
 bindsym $mod+F11 exec swaylock
 
 # Screenshots
-#bindsym $mod+Alt_L+3 exec "grimshot --notify save window"
-#bindsym $mod+Control_L+Shift+# exec grimshot --notify copy window
-#bindsym $mod+Alt_L+4 exec "grimshot --notify save area"
-#bindsym $mod+Control_L+Shift+$ exec "grimshot --notify copy area"
 bindsym Print exec grimshot --notify copy area
+bindsym $mod+Print exec grimshot --notify copy window
+bindsym $mod+Shift+Print exec grimshot --notify copy screen
+bindsym Control+Print exec grimshot --notify save area
+bindsym $mod+Control+Print exec grimshot --notify save window
+bindsym $mod+Shift+Control+print exec grimshot --notify save screen
 
 exec swayidle timeout 600 'swaylock' timeout 605 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 # Escape hatch to get out of dpms off state when other user put it in dmps

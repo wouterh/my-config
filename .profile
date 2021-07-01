@@ -3,6 +3,7 @@
 export PATH=$HOME/bin/$(hostname):$HOME/bin/$(uname -s):$HOME/bin/$(uname -m):$HOME/bin:$PATH
 export EDITOR=vim
 export GOPATH=$HOME/Development/go
+export XDG_SCREENSHOTS_DIR=$HOME/tmp
 
 # locale settings
 LANG=en_US.UTF-8

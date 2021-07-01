@@ -92,3 +92,8 @@ done
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+# if pbcopy is not available, but wl-copy is -> alias
+command -v pbcopy > /dev/null || command -v wl-copy > /dev/null && alias pbcopy=wl-copy
+# if pbpaste is not available, but wl-paste is -> alias
+command -v pbpaste > /dev/null || command -v wl-paste > /dev/null && alias pbpaste=wl-paste
