@@ -50,6 +50,11 @@ install_sway() {
   if [[ $proceed -ne 0 ]]; then
     successfully "sudo apt-get install -y waybar"
   fi
+
+	check "wofi" "command -v wofi"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo apt-get install -y wofi"
+	fi
 }
 
 
