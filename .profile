@@ -1,6 +1,8 @@
-export PATH=~/bin/$(hostname):~/bin/$(uname -s):~/bin/$(uname -m):~/bin:$PATH
+[ -e $HOME/.config/`hostname`.profile ] && . $HOME/.config/`hostname`.profile
+
+export PATH=$HOME/bin/$(hostname):$HOME/bin/$(uname -s):$HOME/bin/$(uname -m):$HOME/bin:$PATH
 export EDITOR=vim
-export GOPATH=~/Development/go
+export GOPATH=$HOME/Development/go
 
 # locale settings
 LANG=en_US.UTF-8
@@ -17,4 +19,3 @@ LC_TELEPHONE=nl_BE.UTF-8
 LC_MEASUREMENT=nl_BE.UTF-8
 LC_IDENTIFICATION=nl_BE.UTF-8
 
-[ -e .config/$(hostname).profile ] && . .config/$(hostname).profile
