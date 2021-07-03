@@ -1,14 +1,13 @@
 window {
 		border: 2px solid #e4a010;
     background-color: rgba(252,252,252,0.90);
-		border-radius: 0.4rem;
 }
 
 #input {
     border: 2px solid #e4a010;
     background-color: #fcfcfc;
     font-size: 18px;
-    border-radius: 0.4rem;
+		border-radius: 0px;
 }
 
 #inner-box {}
@@ -28,7 +27,6 @@ window {
 }
 
 #entry:selected {
-    border-radius: 0.4rem;
     background-color: #e4a010;
     color: #fcfcfc;
 }

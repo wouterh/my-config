@@ -195,7 +195,7 @@ bar {
 include 'colors'
 
 # Gaps
-gaps inner 5px
+gaps inner 10px
 
 # Toggle sticky
 bindsym $mod+Shift+s sticky toggle

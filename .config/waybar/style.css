@@ -3,7 +3,6 @@
 	font-size: 20px;
 	font-family: monospace, FontAwesome;
 	border: 2px;
-	border-radius: 0.4rem;
 }
 
 .horizontal {
@@ -67,8 +66,8 @@ window#waybar {
 	margin: 0px 2px;
 	padding: 0.5rem;
 	background: #050505;
-	border-radius: 0.4rem;
 	color: #fcfcfc;
+	border-radius: 0;
 }
 #workspaces button:hover {
 	transition: none;
