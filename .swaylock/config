@@ -1,38 +1,36 @@
 ignore-empty-password
+indicator-caps-lock
+disable-caps-lock-text
 font=Ubuntu
 
 color=e4a010
-
-key-hl-color=880033
-
+key-hl-color=e4a010
 separator-color=fcfcfc00
 
-inside-color=00000099
-inside-clear-color=ffd20400
-inside-caps-lock-color=009ddc00
-inside-ver-color=d9d8d800
-inside-wrong-color=ee2e2400
+inside-color=05050599
+inside-clear-color=00640099
+inside-caps-lock-color=0000bf99
+inside-ver-color=e4a01099
+inside-wrong-color=8b000099
 
-ring-color=231f20D9
-ring-clear-color=231f20D9
-ring-caps-lock-color=231f20D9
-ring-ver-color=231f20D9
-ring-wrong-color=231f20D9
+ring-color=050505D9
+ring-clear-color=006400D9
+ring-caps-lock-color=0000bfD9
+ring-ver-color=e4a010D9
+ring-wrong-color=8b0000D9
 
-line-color=00000000
-line-clear-color=ffd204FF
-line-caps-lock-color=009ddcFF
-line-ver-color=d9d8d8FF
-line-wrong-color=ee2e24FF
+line-color=05050500
+line-clear-color=006400FF
+line-caps-lock-color=0000bfFF
+line-ver-color=e4a010FF
+line-wrong-color=8b0000FF
 
-text-clear-color=ffd20400
-text-ver-color=d9d8d800
-text-wrong-color=ee2e2400
+text-clear-color=bf00bf00
+text-ver-color=e4a01000
+text-wrong-color=8b000000
 
-bs-hl-color=ee2e24FF
-caps-lock-key-hl-color=ffd204FF
-caps-lock-bs-hl-color=ee2e24FF
-disable-caps-lock-text
-text-caps-lock-color=009ddc
+bs-hl-color=8b0000FF
+caps-lock-key-hl-color=00008bFF
+caps-lock-bs-hl-color=8b008bFF
 
 image=~/Pictures/wallpaper.jpg
