@@ -8,9 +8,7 @@
 		"sway/workspaces",
 	],
 	"modules-center": [
-		"custom/time",
-		"custom/day",
-		"custom/date"
+		"custom/clock"
 	],
 	"modules-right": [
 		"pulseaudio",
@@ -27,21 +25,9 @@
 		"format": "{name}"
 	},
 
-	"custom/day": {
-		"interval": 60,
-		"exec": "date +%a",
-		"format": "{}",
-		"tooltip": false
-	},
-	"custom/time": {
+	"custom/clock": {
 		"interval": 10,
-		"exec": "date +%H:%M",
-		"format": "{}",
-		"tooltip": false
-	},
-	"custom/date": {
-		"interval": 60,
-		"exec": "date +%d/%m",
+		"exec": "date +\"%H:%M  %a  %d/%m\"",
 		"format": "{}",
 		"tooltip": false
 	},
