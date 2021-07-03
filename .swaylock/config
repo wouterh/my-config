@@ -5,7 +5,7 @@ color=e4a010
 
 key-hl-color=880033
 
-separator-color=00000000
+separator-color=fcfcfc00
 
 inside-color=00000099
 inside-clear-color=ffd20400
@@ -34,3 +34,5 @@ caps-lock-key-hl-color=ffd204FF
 caps-lock-bs-hl-color=ee2e24FF
 disable-caps-lock-text
 text-caps-lock-color=009ddc
+
+image=~/Pictures/wallpaper.jpg
