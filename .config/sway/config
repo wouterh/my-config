@@ -95,7 +95,7 @@ input * {
     set $ws6 "6"
     set $ws7 "7"
     set $ws8 "8"
-    set $ws9 "9"
+    set $ws9 "9 "
     set $ws10 "10 "
 
 
@@ -215,6 +215,7 @@ bindsym $mod+Shift+Control+print exec grimshot --notify save screen
 assign [app_id="firefox" title=".*WhatsApp.*"] workspace $ws2
 assign [class="discord"] workspace $ws2
 assign [class="VirtualBox Manager"] workspace $ws10
+assign [class="Spotify"] workspace $ws9
 
 for_window [class="VirtualBox Manager"] layout tabbed
 for_window [class="1Password"] floating enable
