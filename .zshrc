@@ -1,12 +1,3 @@
-# ensure the correct locales are used
-export LANG="nl_BE.UTF-8"
-export LC_COLLATE="nl_BE.UTF-8"
-export LC_CTYPE="nl_BE.UTF-8"
-export LC_MESSAGES="nl_BE.UTF-8"
-export LC_MONETARY="nl_BE.UTF-8"
-export LC_NUMERIC="nl_BE.UTF-8"
-export LC_TIME="nl_BE.UTF-8"
-
 if [[ -d "$HOME/.zcompcache" ]]
 then
 	export ZSH_CACHE_DIR=$HOME/.zcompcache
