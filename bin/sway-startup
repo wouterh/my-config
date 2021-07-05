@@ -1,0 +1,10 @@
+#!/bin/bash
+
+swaymsg exec mako
+swaymsg exec dropbox start
+
+# NOTE: assignment to workspaces doesn't seem to work during startup, so leave it alone for now
+#sleep 5
+#swaymsg exec discord
+#swaymsg workspace 4
+#swaymsg exec firefox 

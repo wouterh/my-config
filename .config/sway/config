@@ -87,10 +87,10 @@ input * {
 #
 
     # Name workspaces
-    set $ws1 "1 "
+    set $ws1 "1 "
     set $ws2 "2 "
     set $ws3 "3 "
-    set $ws4 "4 "
+    set $ws4 "4"
     set $ws5 "5"
     set $ws6 "6"
     set $ws7 "7"
@@ -222,6 +222,9 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Assignments and layouts for specific apps
 assign [app_id="firefox" title=".*WhatsApp.*"] workspace $ws2
+# for some reason the assignment above works, but the ones below need for_window...
+for_window [app_id="firefox" title=".*Familie Horré Mail.*"] move window to workspace $ws1
+for_window [app_id="firefox" title=".*Familie Horré - Calendar.*"] move window to workspace $ws1
 assign [class="discord"] workspace $ws2
 assign [class="VirtualBox Manager"] workspace $ws10
 assign [class="Spotify"] workspace $ws9
@@ -231,12 +234,6 @@ for_window [class="1Password"] floating enable
 for_window [app_id="pavucontrol"] floating enable, resize set 25 ppt 50 ppt, move position 2290 px 30 px
 
 # Start some applications on startup
-# NOTE: commented because assigns seem to be broken when starting programs like this
-# exec firefox --new-window http://mail.horre.be/
-# exec firefox --new-window
-# exec discord
-
-exec mako
-exec sleep 5 && dropbox start
+exec sway-startup
 
 include /etc/sway/config.d/*
