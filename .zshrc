@@ -40,7 +40,6 @@ plugins=(droplr
 				 iosctl
 				 oh-my-matrix
 				 npm
-				 osx
 				 react-native
 				 vagrant
 				 xcode
