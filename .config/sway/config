@@ -227,7 +227,7 @@ for_window [app_id="firefox" title=".*Familie Horré Mail.*"] move window to wor
 for_window [app_id="firefox" title=".*Familie Horré - Calendar.*"] move window to workspace $ws1
 assign [class="discord"] workspace $ws2
 assign [class="VirtualBox Manager"] workspace $ws10
-assign [class="Spotify"] workspace $ws9
+for_window [class="Spotify"] move window to workspace $ws9
 
 for_window [class="VirtualBox Manager"] layout tabbed
 for_window [class="1Password"] floating enable
