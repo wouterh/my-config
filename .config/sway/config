@@ -220,6 +220,9 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# Open copyq picker
+bindsym $mod+Alt+c exec copyq toggle
+
 # Assignments and layouts for specific apps
 assign [app_id="firefox" title=".*WhatsApp.*"] workspace $ws2
 # for some reason the assignment above works, but the ones below need for_window...
@@ -232,6 +235,7 @@ for_window [class="Spotify"] move window to workspace $ws9
 for_window [class="VirtualBox Manager"] layout tabbed
 for_window [class="1Password"] floating enable
 for_window [app_id="pavucontrol"] floating enable, resize set 25 ppt 50 ppt, move position 2290 px 30 px
+for_window [class="copyq"] floating enable
 
 # Start some applications on startup
 exec sway-startup

@@ -2,6 +2,7 @@
 
 swaymsg exec mako
 swaymsg exec dropbox start
+swaymsg exec copyq
 
 # NOTE: assignment to workspaces doesn't seem to work during startup, so leave it alone for now
 #sleep 5

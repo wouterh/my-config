@@ -55,6 +55,26 @@ install_sway() {
 	if [[ $proceed -ne 0 ]]; then
 		successfully "sudo apt-get install -y wofi"
 	fi
+
+	check "copyq" "command -v copyq"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo apt-get install -y copyq copyq-plugins"
+	fi
+
+	check "ydotool" "command -v ydotool"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo apt-get install -y ydotool ydotoold"
+	fi
+
+	check "grim" "command -v grim"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo apt-get install -y grim"
+	fi
+
+	check "slurp" "command -v slurp"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo apt-get install -y slurp"
+	fi
 }
 
 
