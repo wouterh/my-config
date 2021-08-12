@@ -127,7 +127,7 @@ input * {
 # Layout stuff:
 #
 
-		workspace_layout stacking
+		#workspace_layout stacking
 		bindsym $mod+Tab focus next
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
