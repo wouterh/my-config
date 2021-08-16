@@ -1,8 +1,8 @@
 [ -e $HOME/.config/`hostname`.profile ] && . $HOME/.config/`hostname`.profile
 
-export PATH=$HOME/bin/$(hostname):$HOME/bin/$(uname -s):$HOME/bin/$(uname -m):$HOME/bin:$PATH
 export EDITOR=vim
 export GOPATH=$HOME/Development/go
+export PATH=$HOME/bin/$(hostname):$HOME/bin/$(uname -s):$HOME/bin/$(uname -m):$HOME/bin:$GOPATH/bin:$PATH
 export XDG_SCREENSHOTS_DIR=$HOME/tmp
 export XDG_CONFIG_HOME=$HOME/.config
 
