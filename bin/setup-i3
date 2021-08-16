@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+set +e
+proceed=1
+result=0
+
+LOGFILE=/tmp/dotfiles-setup
+
+DOTFILES_ROOT=$HOME/.local/lib/dotfiles
+. $DOTFILES_ROOT/shared-functions
+
+# ensure we capture unexpected exits
+trap exit_warning EXIT
+
+echo "Running in $0 ${BASH_VERSION}" >> $LOGFILE
+
+if [[ $bootstrapping -ne 1 ]]; then
+  header "Let's setup i3 Window Manager..."
+
+  ask_sudo_password
+
+  notice_left "\nFeel free to follow the details by running:"
+  notice_left "${BOLD} tail -f $LOGFILE ${NORMAL}in another terminal\n"
+fi
+
+install_i3() {
+	_title_ 'Installing i3 and friends'
+
+	check "i3" "command -v i3"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo apt-get install -y i3"
+	fi
+
+	check "rofi" "command -v rofi"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo apt-get install -y rofi"
+	fi
+
+	check "compton" "command -v compton"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo apt-get install -y compton"
+	fi
+
+	check "feh" "command -v feh"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo apt-get install -y feh"
+	fi
+
+	check "copyq" "command -v copyq"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "sudo apt-get install -y copyq copyq-plugins"
+	fi
+}
+
+
+install_i3
+
+trap finish EXIT
+
+if [[ $bootstrapping -ne 1 ]]; then
+  _title_ "Done... Enjoy!"
+fi
