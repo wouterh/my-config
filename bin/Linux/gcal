@@ -1,3 +1,3 @@
 #!/bin/bash
 
-qutebrowser --target window https://calendar.google.com/
+qutebrowser -R --target window https://calendar.google.com/
