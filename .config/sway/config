@@ -18,7 +18,7 @@ set $menu dmenu_path | wofi -d | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/wouter/Pictures/wallpaper.jpg fill
-output DP-3 scale 1.25
+output DP-3 scale 1.54 
 
 
 ### Idle configuration
