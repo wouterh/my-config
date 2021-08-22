@@ -1,0 +1,3 @@
+#!/bin/bash
+
+i3-nagbar -t warning -m 'Really logout? Choose your option.' -b 'Exit' 'i3-msg exit' -b 'Shutdown' 'shutdown -h now' -b 'Reboot' 'shutdown -r now'
