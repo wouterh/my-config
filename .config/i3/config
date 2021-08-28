@@ -48,6 +48,10 @@ bindsym XF86AudioStop exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2
 bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
 bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 
+# lock screen manually
+# F11 has a 'lock' sign on my keyboard
+bindsym $mod+F11 exec loginctl lock-session
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
