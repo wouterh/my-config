@@ -13,6 +13,7 @@ DOTFILES_ROOT=$HOME/.local/lib/dotfiles
 trap exit_warning EXIT
 
 echo "Running in $0 ${BASH_VERSION}" >> $LOGFILE
+echo "Running with PATH: ${PATH}" >> $LOGFILE
 
 if [[ $bootstrapping -ne 1 ]]; then
   header "Let's setup i3 Window Manager..."
@@ -28,27 +29,32 @@ install_i3() {
 
 	check "i3" "command -v i3"
 	if [[ $proceed -ne 0 ]]; then
-		successfully "sudo apt-get install -y i3"
+		successfully "install-i3"
 	fi
 
 	check "rofi" "command -v rofi"
 	if [[ $proceed -ne 0 ]]; then
-		successfully "sudo apt-get install -y rofi"
+		successfully "install-rofi"
 	fi
 
-	check "compton" "command -v compton"
+	check "picom" "command -v picom"
 	if [[ $proceed -ne 0 ]]; then
-		successfully "sudo apt-get install -y compton"
+		successfully "install-picom"
 	fi
 
 	check "feh" "command -v feh"
 	if [[ $proceed -ne 0 ]]; then
-		successfully "sudo apt-get install -y feh"
+		successfully "install-feh"
 	fi
 
 	check "copyq" "command -v copyq"
 	if [[ $proceed -ne 0 ]]; then
-		successfully "sudo apt-get install -y copyq copyq-plugins"
+		successfully "install-copyq"
+	fi
+
+	check "xss-lock" "command -v xss-lock"
+	if [[ $proceed -ne 0 ]]; then
+		successfully "install-xss-lock"
 	fi
 }
 

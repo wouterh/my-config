@@ -28,52 +28,47 @@ install_sway() {
 
 	check "sway" "command -v sway"
 	if [[ $proceed -ne 0 ]]; then
-		successfully "sudo add-apt-repository -y ppa:wouterh/sway && sudo apt-get install -y sway"
+		successfully "install-sway"
 	fi
 
   check "swayidle" "command -v swayidle"
   if [[ $proceed -ne 0 ]]; then
-    successfully "sudo apt-get install -y swayidle"
+    successfully "install-swayidle"
   fi
 
   check "swaylock" "command -v swaylock"
   if [[ $proceed -ne 0 ]]; then
-    successfully "sudo apt-get install -y swaylock"
+		successfully "install-swaylock"
   fi
 
   check "grimshot" "command -v grimshot"
   if [[ $proceed -ne 0 ]]; then
-    successfully "sudo apt-get install -y grimshot"
+    successfully "install-grimshot"
   fi
 
   check "waybar" "command -v waybar"
   if [[ $proceed -ne 0 ]]; then
-    successfully "sudo apt-get install -y waybar"
+    successfully "install-waybar"
   fi
 
 	check "wofi" "command -v wofi"
 	if [[ $proceed -ne 0 ]]; then
-		successfully "sudo apt-get install -y wofi"
+		successfully "install-wofi"
 	fi
 
 	check "copyq" "command -v copyq"
 	if [[ $proceed -ne 0 ]]; then
-		successfully "sudo apt-get install -y copyq copyq-plugins"
-	fi
-
-	check "ydotool" "command -v ydotool"
-	if [[ $proceed -ne 0 ]]; then
-		successfully "sudo apt-get install -y ydotool ydotoold"
+		successfully "install-copyq"
 	fi
 
 	check "grim" "command -v grim"
 	if [[ $proceed -ne 0 ]]; then
-		successfully "sudo apt-get install -y grim"
+		successfully "install-grim"
 	fi
 
 	check "slurp" "command -v slurp"
 	if [[ $proceed -ne 0 ]]; then
-		successfully "sudo apt-get install -y slurp"
+		successfully "install-slurp"
 	fi
 }
 

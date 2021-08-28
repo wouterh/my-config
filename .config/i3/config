@@ -34,7 +34,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id "feh --bg-center ~/Pictures/wallpaper.jpg"
 
 # Start compositor
-exec --no-startup-id compton
+exec --no-startup-id picom
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

@@ -24,9 +24,9 @@ fi
 
 install_firacode() {
 	_title_ 'Installing Fira Code Font'
-	check "Fira Code" "font-installed FiraCode"
+	check "Fira Code" "font-installed \"FiraCode Nerd Font Mono\""
 	if [[ $proceed -ne 0 ]]; then
-		successfully "install-firacode"
+		successfully "install-firacode-nerdfont"
 	fi
 }
 

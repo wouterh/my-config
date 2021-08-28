@@ -1,10 +1,18 @@
 [ -e $HOME/.config/`hostname`.profile ] && . $HOME/.config/`hostname`.profile
 
+PATH_EXTRAS=$HOME/bin/$(uname -s):$HOME/bin/$(uname -m):$HOME/bin
+
+[ -e /etc/os-release ] && PATH_EXTRAS=$HOME/bin/$(source /etc/os-release && echo ${ID}):$PATH_EXTRAS
+
+PATH_EXTRAS=$HOME/bin/$(hostname):$PATH_EXTRAS
+
 export EDITOR=vim
 export GOPATH=$HOME/Development/go
-export PATH=$HOME/bin/$(hostname):$HOME/bin/$(uname -s):$HOME/bin/$(uname -m):$HOME/bin:$GOPATH/bin:$PATH
+PATH_EXTRAS=$PATH_EXTRAS:$GOPATH/bin
 export XDG_SCREENSHOTS_DIR=$HOME/tmp
 export XDG_CONFIG_HOME=$HOME/.config
+
+export PATH=$PATH_EXTRAS:$PATH
 
 # locale settings
 LANG=en_US.UTF-8
