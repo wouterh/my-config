@@ -164,6 +164,10 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec i3-logout-menu
 
+# Multi monitor
+bindsym $mod+Shift+F1 move workspace to output left
+bindsym $mod+Shift+F2 move workspace to output right
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
