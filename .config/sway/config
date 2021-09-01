@@ -18,8 +18,6 @@ set $menu dmenu_path | wofi -d | xargs swaymsg exec --
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/wouter/Pictures/wallpaper.jpg fill
-output DP-3 scale 1.54 
-
 
 ### Idle configuration
 exec swayidle timeout 600 'swaylock' timeout 605 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
@@ -196,6 +194,7 @@ bar {
 
 # Colors
 include 'colors'
+include `hostname`
 
 # Gaps
 gaps inner 10px
@@ -237,10 +236,13 @@ for_window [class="Spotify"] move window to workspace $ws9
 
 for_window [class="VirtualBox Manager"] layout tabbed
 for_window [class="1Password"] floating enable
-for_window [app_id="pavucontrol"] floating enable, resize set 25 ppt 50 ppt, move position 2290 px 30 px
+#for_window [app_id="pavucontrol"] floating enable, resize set 25 ppt 50 ppt, move position 2290 px 30 px
 for_window [class="copyq"] floating enable
 
 # Start some applications on startup
 exec sway-startup
+
+# make sure pipewire capture works
+exec "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway"
 
 include /etc/sway/config.d/*

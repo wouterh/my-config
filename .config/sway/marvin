@@ -1,0 +1,4 @@
+# Config specific for marvin
+input type:touchpad {
+	natural_scroll enabled
+}
