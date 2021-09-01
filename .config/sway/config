@@ -236,7 +236,7 @@ for_window [class="Spotify"] move window to workspace $ws9
 
 for_window [class="VirtualBox Manager"] layout tabbed
 for_window [class="1Password"] floating enable
-#for_window [app_id="pavucontrol"] floating enable, resize set 25 ppt 50 ppt, move position 2290 px 30 px
+for_window [app_id="pavucontrol"] floating enable, resize set 25 ppt 50 ppt
 for_window [class="copyq"] floating enable
 
 # Start some applications on startup
