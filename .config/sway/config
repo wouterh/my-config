@@ -12,15 +12,14 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | wofi -d | xargs swaymsg exec --
+set $menu wofi -S drun | xargs swaymsg exec --
+set $rmenu wofi -S run | xargs swaymsg exec --
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/wouter/Pictures/wallpaper.jpg fill
 
-### Idle configuration
-exec swayidle timeout 600 'swaylock' timeout 605 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'
 # Escape hatch to get out of dpms off state when other user put it in dmps
 bindsym --locked $mod+w exec swaymsg "output * dpms on"
 bindsym --locked $mod+Shift+w output * dpms on
@@ -43,6 +42,7 @@ input * {
 
     # Start your launcher
     bindsym $mod+d exec $menu
+		bindsym $mod+Shift+d exec $rmenu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
