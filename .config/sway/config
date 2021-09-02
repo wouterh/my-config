@@ -250,4 +250,7 @@ exec sway-startup
 # make sure pipewire capture works
 exec "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway"
 
+# launch nm-applet
+exec "nm-applet --indicator"
+
 include /etc/sway/config.d/*
