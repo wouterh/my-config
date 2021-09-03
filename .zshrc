@@ -17,7 +17,7 @@ PURE_PROMPT_SYMBOL="○"
 PURE_PROMPT_DIR_TRUNC="3"
 PURE_PROMPT_GIT_SYMBOL="\ue725 "
 PURE_PROMPT_KUBECONTEXT_SYMBOL="\ue7b2 "
-PURE_PROMPT_KUBECONTEXT_SHOW=false
+PURE_PROMPT_KUBECONTEXT_SHOW=true
 PURE_PROMPT_TERRAFORM_SYMBOL="\uf9fd"
 
 # Comment following line if you do not want red dots to be displayed while waiting for completion
