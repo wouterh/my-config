@@ -19,6 +19,9 @@ PURE_PROMPT_GIT_SYMBOL="\ue725 "
 PURE_PROMPT_KUBECONTEXT_SYMBOL="\ue7b2 "
 PURE_PROMPT_KUBECONTEXT_SHOW=true
 PURE_PROMPT_TERRAFORM_SYMBOL="\uf9fd"
+# this isn't very useful, it just shows the version of the system go,
+# not the one in go.mod
+PURE_PROMPT_GOLANG_SHOW=false
 
 # Comment following line if you do not want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
