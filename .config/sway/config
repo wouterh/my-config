@@ -231,10 +231,12 @@ bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym $mod+Alt+c exec copyq toggle
 
 # Assignments and layouts for specific apps
-assign [app_id="firefox" title=".*WhatsApp.*"] workspace $ws2
-# for some reason the assignment above works, but the ones below need for_window...
-for_window [app_id="firefox" title=".*Familie Horré Mail.*"] move window to workspace $ws1
-for_window [app_id="firefox" title=".*Familie Horré - Calendar.*"] move window to workspace $ws1
+for_window [title=".*WhatsApp.*"] workspace $ws2
+for_window [title=".*Familie Horré Mail.*"] move window to workspace $ws1
+for_window [title=".*Familie Horré - Calendar.*"] move window to workspace $ws1
+for_window [title=".*VersaSense NV Mail.*"] move window to workspace $ws1
+for_window [title=".*VersaSense NV - Agenda.*"] move window to workspace $ws1
+assign [class="Slack"] workspace $ws2
 assign [class="discord"] workspace $ws2
 assign [class="VirtualBox Manager"] workspace $ws10
 for_window [class="Spotify"] move window to workspace $ws9
