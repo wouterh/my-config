@@ -1,4 +1,1 @@
 output DP-3 scale 1.54
-
-### Idle configuration
-exec swayidle timeout 600 'swaylock' timeout 605 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"'

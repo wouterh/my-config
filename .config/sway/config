@@ -207,8 +207,10 @@ gaps inner 10px
 # Toggle sticky
 bindsym $mod+Shift+s sticky toggle
 
+# Idle and locking config
+exec swayidle -w timeout 600 'swaylock -f' timeout 900 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f' lock 'swaylock -f'
 # F11 has a 'lock' sign on my keyboard
-bindsym $mod+F11 exec swaylock
+bindsym $mod+F11 exec loginctl lock-session
 
 # Screenshots
 bindsym Print exec grimshot --notify copy area
