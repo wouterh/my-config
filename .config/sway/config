@@ -257,4 +257,7 @@ exec "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_D
 # launch nm-applet
 exec "nm-applet --indicator"
 
+# Start lxpolkit to be able to run administrative tasks
+exec "lxpolkit"
+
 include /etc/sway/config.d/*
