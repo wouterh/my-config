@@ -27,26 +27,19 @@ PURE_PROMPT_GOLANG_SHOW=false
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-plugins=(droplr
-				 docker
+plugins=(docker
 				 docker-compose
 				 extract
 				 encode64
 				 fast-syntax-highlighting
-				 gem
 				 gitignore
 				 git-extras
 				 git-hubflow
 				 git-it-on
-				 httpie
-				 iterm2
 				 iosctl
 				 oh-my-matrix
 				 npm
 				 react-native
-				 vagrant
-				 xcode
-				 vault
 				 zshmarks
 				 zsh-brew-services
 				 zsh-autosuggestions
