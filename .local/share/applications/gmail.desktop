@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Gmail
+Comment=Gmail in a chromium app window
+Exec=chromium --app=https://mail.google.com/

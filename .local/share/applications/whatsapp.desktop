@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=WhatsApp
+Comment=WhatsApp Web
+Exec=chromium --app=https://web.whatsapp.com/

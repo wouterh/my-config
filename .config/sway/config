@@ -234,8 +234,11 @@ bindsym $mod+Alt+c exec copyq toggle
 
 # Assignments and layouts for specific apps
 for_window [title=".*WhatsApp.*"] workspace $ws2
-for_window [title=".*Familie Horré Mail.*"] move window to workspace $ws1
-for_window [title=".*Familie Horré - Calendar.*"] move window to workspace $ws1
+#for_window [title=".*Familie Horré Mail.*"] move window to workspace $ws1
+#for_window [title=".*Familie Horré - Calendar.*"] move window to workspace $ws1
+assign [class="Chromium" instance="mail.google.com"] workspace $ws1
+assign [class="Chromium" instance="calendar.google.com"] workspace $ws1
+assign [class="Chromium" instance="web.whatsapp.com"] workspace $ws2
 for_window [title=".*VersaSense NV Mail.*"] move window to workspace $ws1
 for_window [title=".*VersaSense NV - Agenda.*"] move window to workspace $ws1
 assign [class="Slack"] workspace $ws2
