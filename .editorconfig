@@ -22,3 +22,6 @@ indent_size = 4
 
 [*.proto]
 indent_style = space
+
+[*.{yml,yaml}]
+indent_style = space
