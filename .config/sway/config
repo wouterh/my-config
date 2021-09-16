@@ -122,9 +122,6 @@ input * {
     bindsym $mod+Shift+8 move container to workspace $ws8, workspace $ws8
     bindsym $mod+Shift+9 move container to workspace $ws9, workspace $ws9
     bindsym $mod+Shift+0 move container to workspace $ws10, workspace $ws10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
-    #
 
 bindsym $mod+F1 move workspace to output left
 bindsym $mod+F2 move workspace to output right
@@ -194,6 +191,35 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Moving the cursor around with the keyboard
+mode "cursor" {
+	bindsym $left seat - cursor move -10 0
+	bindsym $down seat - cursor move 0 10
+	bindsym $up seat - cursor move 0 -10
+	bindsym $right seat - cursor move 10 0
+
+	bindsym $mod+$left seat - cursor move -100 0
+	bindsym $mod+$down seat - cursor move 0 100
+	bindsym $mod+$up seat - cursor move 0 -100
+	bindsym $mod+$right seat - cursor move 100 0
+
+	bindsym Left seat - cursor move -10 0
+	bindsym Down seat - cursor move 0 10
+	bindsym Up seat - cursor move 0 -10
+	bindsym Right seat - cursor move 10 0
+
+	bindsym $mod+Left seat - cursor move -100 0
+	bindsym $mod+Down seat - cursor move 0 100
+	bindsym $mod+Up seat - cursor move 0 -100
+	bindsym $mod+Right seat - cursor move 100 0
+
+	bindsym Return seat - cursor press button1, seat - cursor release button1
+
+  # Return to default mode
+  bindsym Escape mode "default"
+}
+bindsym $mod+m mode "cursor"
+
 bar {
     swaybar_command waybar
 
@@ -237,13 +263,9 @@ bindsym $mod+Alt+c exec copyq toggle
 
 # Assignments and layouts for specific apps
 for_window [title=".*WhatsApp.*"] workspace $ws2
-#for_window [title=".*Familie Horré Mail.*"] move window to workspace $ws1
-#for_window [title=".*Familie Horré - Calendar.*"] move window to workspace $ws1
 assign [class="Chromium" instance="mail.google.com"] workspace $ws1
 assign [class="Chromium" instance="calendar.google.com"] workspace $ws1
 assign [class="Chromium" instance="web.whatsapp.com"] workspace $ws2
-for_window [title=".*VersaSense NV Mail.*"] move window to workspace $ws1
-for_window [title=".*VersaSense NV - Agenda.*"] move window to workspace $ws1
 assign [class="Slack"] workspace $ws2
 assign [class="discord"] workspace $ws2
 assign [class="VirtualBox Manager"] workspace $ws10
