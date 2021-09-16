@@ -29,7 +29,8 @@ install_vimplugins () {
 	declare -a plugins=("editorconfig/editorconfig-vim"
 											"djoshea/vim-autoread"
 											"preservim/nerdtree"
-											"vim-flavored-markdown")
+											"vim-flavored-markdown"
+											"fatih/vim-go")
 
 	for plugin in "${plugins[@]}"
 	do
