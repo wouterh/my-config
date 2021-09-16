@@ -15,6 +15,9 @@ set $term alacritty
 set $menu wofi -S drun | xargs swaymsg exec --
 set $rmenu wofi -S run | xargs swaymsg exec --
 
+# Font
+font FiraCode Nerd Font Mono 10
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
