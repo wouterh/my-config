@@ -21,18 +21,6 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 
 alias k9="killall -9"
 
-alias iphone5s="ios-sim start --devicetypeid com.apple.CoreSimulator.SimDeviceType.iPhone-5s"
-alias ipad="ios-sim start --devicetypeid com.apple.CoreSimulator.SimDeviceType.iPad-Pro"
-alias iphone6plus="ios-sim start --devicetypeid com.apple.CoreSimulator.SimDeviceType.iPhone-6-Plus"
-alias iphone6="ios-sim start --devicetypeid com.apple.CoreSimulator.SimDeviceType.iPhone-6"
-alias iphone6s="ios-sim start --devicetypeid com.apple.CoreSimulator.SimDeviceType.iPhone-6s"
-alias iphone7="ios-sim start --devicetypeid com.apple.CoreSimulator.SimDeviceType.iPhone-7"
-alias iphone8="ios-sim start --devicetypeid com.apple.CoreSimulator.SimDeviceType.iPhone-8"
-alias iphone8s="ios-sim start --devicetypeid com.apple.CoreSimulator.SimDeviceType.iPhone-8s"
-alias iphoneSE="ios-sim start --devicetypeid com.apple.CoreSimulator.SimDeviceType.iPhone-SE"
-alias iphoneX="ios-sim start --devicetypeid com.apple.CoreSimulator.SimDeviceType.iPhone-X"
-alias iphoneXs="ios-sim start --devicetypeid com.apple.CoreSimulator.SimDeviceType.iPhone-Xs"
-
 # see https://github.com/fcambus/ansiweather for installation anc customization
 alias we="ansiweather"
 
@@ -51,20 +39,6 @@ alias dt="cd ~/Desktop"
 
 # Get week number
 alias week='date +%V'
-
-# IP addresses
-alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en0"
-alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
-
-# Show active network interfaces
-alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
-
-# Flush Directory Service cache
-alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
-
-# Clean up LaunchServices to remove duplicates in the “Open With” menu
-alias lscleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
 # Canonical hex dump; some systems have this symlinked
 command -v hd > /dev/null || alias hd="hexdump -C"
