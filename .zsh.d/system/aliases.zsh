@@ -71,3 +71,7 @@ alias path='echo -e ${PATH//:/\\n}'
 command -v pbcopy > /dev/null || command -v wl-copy > /dev/null && alias pbcopy=wl-copy
 # if pbpaste is not available, but wl-paste is -> alias
 command -v pbpaste > /dev/null || command -v wl-paste > /dev/null && alias pbpaste=wl-paste
+
+# alias ssh to use a standard TERM
+#
+alias ssh="TERM=xterm-256color ssh"
