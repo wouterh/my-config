@@ -276,6 +276,9 @@ for_window [class="1Password"] floating enable
 for_window [app_id="pavucontrol"] floating enable, resize set 25 ppt 50 ppt
 for_window [class="copyq"] floating enable
 
+# Inhibit idle when Google Meet is visible
+for_window [title="Meet -.*"] inhibit_idle visible
+
 # Start some applications on startup
 exec sway-startup
 
