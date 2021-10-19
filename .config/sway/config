@@ -242,12 +242,19 @@ exec swayidle -w timeout 600 'swaylock -f' timeout 900 'swaymsg "output * dpms o
 bindsym $mod+F11 exec loginctl lock-session
 
 # Screenshots
-bindsym Print exec grimshot --notify copy area
-bindsym $mod+Print exec grimshot --notify copy window
-bindsym $mod+Shift+Print exec grimshot --notify copy screen
-bindsym Control+Print exec grimshot --notify save area
-bindsym $mod+Control+Print exec grimshot --notify save window
-bindsym $mod+Shift+Control+print exec grimshot --notify save screen
+set $screenshot_mode "screenshot | 1.   | 2.   | 3.   | 4.   | 5.   | 6.  "
+mode $screenshot_mode {
+	bindsym 1 exec grimshot --notify copy area, mode "default"
+	bindsym 2 exec grimshot --notify copy window, mode "default"
+	bindsym 3 exec grimshot --notify copy screen, mode "default"
+	bindsym 4 exec grimshot --notify save area, mode "default"
+	bindsym 5 exec grimshot --notify save window, mode "default"
+	bindsym 6 exec grimshot --notify save screen, mode "default"
+
+	# Return to default mode
+	bindsym Escape mode "default"
+}
+bindsym Print mode $screenshot_mode
 
 # Music control
 bindsym XF86AudioPlay exec playerctl play-pause
