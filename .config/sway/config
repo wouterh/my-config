@@ -284,6 +284,7 @@ for_window [app_id="pavucontrol"] floating enable, resize set 25 ppt 50 ppt
 for_window [class="copyq"] floating enable
 
 for_window [class="feh"] floating enable
+for_window [app_id="nm-connection-editor"] floating enable
 
 # Inhibit idle when Google Meet is visible
 for_window [title="Meet -.*"] inhibit_idle visible
