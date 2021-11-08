@@ -288,6 +288,9 @@ for_window [app_id="nm-connection-editor"] floating enable
 
 # Inhibit idle when Google Meet is visible
 for_window [title="Meet -.*"] inhibit_idle visible
+# Inhibit idle when a slack call is visible
+for_window [title=".*Slack call.*"] inhibit_idle visible
+
 
 # Start some applications on startup
 exec sway-startup
