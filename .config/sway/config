@@ -123,8 +123,10 @@ input * {
     bindsym $mod+Shift+9 move container to workspace $ws9, workspace $ws9
     bindsym $mod+Shift+0 move container to workspace $ws10, workspace $ws10
 
-bindsym $mod+F1 move workspace to output left
-bindsym $mod+F2 move workspace to output right
+bindsym $mod+less move workspace to output left
+bindsym $mod+greater move workspace to output right
+bindsym $mod+comma focus output left
+bindsym $mod+period focus output right
 
 #
 # Layout stuff:
