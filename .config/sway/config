@@ -133,7 +133,8 @@ bindsym $mod+period focus output right
 #
 
 		#workspace_layout stacking
-		bindsym $mod+Tab focus next
+		# Use mod+Tab to switch to most recent workspace and back
+		bindsym $mod+Tab workspace back_and_forth
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
