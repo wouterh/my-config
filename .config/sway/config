@@ -258,6 +258,8 @@ mode $screenshot_mode {
 	bindsym Escape mode "default"
 }
 bindsym Print mode $screenshot_mode
+# Screen recording
+bindsym Shift+Print exec toggle-wf-recorder 
 
 # Music control
 bindsym XF86AudioPlay exec playerctl play-pause
