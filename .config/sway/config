@@ -270,6 +270,10 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# Prevent screen from sleeping
+bindsym $mod+Shift+F11 inhibit_idle visible
+bindsym $mod+Shift+F12 inhibit_idle none
+
 # Open copyq picker
 bindsym $mod+Alt+c exec copyq toggle
 
