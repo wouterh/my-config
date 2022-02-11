@@ -13,6 +13,10 @@
 	lg      = !git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 	ls = ls-tree -r --full-tree HEAD
 	st = status
+	hide = update-index --skip-worktree
+	unhide = update-index --no-skip-worktree
+	unhide-all = !git ls-files -v | grep -i '^S' | cut -c3- | xargs git update-index --no-skip-worktree
+	hidden = !git ls-files -v | grep '^S' | cut -c3-
 [apply]
 	whitespace = nowarn
 [color]
