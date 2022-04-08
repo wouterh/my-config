@@ -188,6 +188,16 @@ mode "resize" {
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
 
+		# Resize to fixed percentages
+		bindsym $mod+1 resize set width 66ppt
+		bindsym $mod+2 resize set width 50ppt
+	  bindsym $mod+3 resize set width 33ppt
+    bindsym $mod+4 resize set width 25ppt
+		bindsym $mod+Shift+1 resize set height 66ppt
+		bindsym $mod+Shift+2 resize set height 50ppt
+		bindsym $mod+Shift+3 resize set height 33ppt
+		bindsym $mod+Shift+4 resize set height 25ppt
+
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -258,6 +268,8 @@ mode $screenshot_mode {
 	bindsym Escape mode "default"
 }
 bindsym Print mode $screenshot_mode
+# Direct shortcut for screenshot of area on clipboard
+bindsym $mod+Print exec grimshot --notify copy area, mode "default"
 # Screen recording
 bindsym Shift+Print exec toggle-wf-recorder 
 
