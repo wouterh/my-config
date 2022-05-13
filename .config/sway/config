@@ -289,6 +289,9 @@ bindsym $mod+Shift+F12 inhibit_idle none
 # Open copyq picker
 bindsym $mod+Alt+c exec copyq toggle
 
+# Open emoji picker
+bindsym $mod+Alt+Space exec emote
+
 # Assignments and layouts for specific apps
 for_window [title=".*WhatsApp.*"] workspace $ws2
 assign [class="Chromium" instance="mail.google.com"] workspace $ws1
