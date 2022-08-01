@@ -145,6 +145,10 @@ if [[ -a $HOME/.yarn/bin ]]; then
 	export PATH="$HOME/.yarn/bin:$PATH"
 fi
 
+if [[ -a $HOME/.local/bin ]]; then
+	export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # Make ctrl-d exit the shell
 unsetopt ignoreeof
 
