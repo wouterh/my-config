@@ -2,4 +2,4 @@
 Type=Application
 Name=Gcal
 Comment=Gcal in a chromium app window
-Exec=chromium --app=https://calendar.google.com/
+Exec=google-chrome-stable --app=https://calendar.google.com/
