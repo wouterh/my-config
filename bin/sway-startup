@@ -2,7 +2,7 @@
 
 swaymsg exec mako
 swaymsg exec dropbox start
-swaymsg exec copyq
+swaymsg exec -- wl-paste -t text --watch /home/wouter/bin/Linux/my-clipman
 
 # NOTE: assignment to workspaces doesn't seem to work during startup, so leave it alone for now
 #sleep 5
