@@ -1,0 +1,3 @@
+ksappimg () {
+	kappimg $* --context staging
+}

@@ -1,0 +1,5 @@
+kappimg () {
+	names=$1
+	shift
+	kubectl get pod -A -o custom-columns="NAME:.metadata.name,IMAGES:.spec.containers[*].image" -l "app.kubernetes.io/name in ($names)" $*
+}
