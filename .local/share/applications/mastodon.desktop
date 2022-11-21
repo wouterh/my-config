@@ -2,4 +2,4 @@
 Type=Application
 Name=Mastodon
 Comment=Mastodon Web
-Exec=google-chrome-stable --app=https://mastodon-belgium.be
+Exec=google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --app=https://mastodon-belgium.be

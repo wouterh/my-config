@@ -2,4 +2,4 @@
 Type=Application
 Name=WhatsApp
 Comment=WhatsApp Web
-Exec=google-chrome-stable --app=https://web.whatsapp.com/
+Exec=google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --app=https://web.whatsapp.com/

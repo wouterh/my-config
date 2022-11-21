@@ -2,4 +2,4 @@
 Type=Application
 Name=Gmail
 Comment=Gmail in a chromium app window
-Exec=google-chrome-stable --app=https://mail.google.com/
+Exec=google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --app=https://mail.google.com/
