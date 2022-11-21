@@ -298,11 +298,11 @@ assign [class="Chromium" instance="mail.google.com"] workspace $ws1
 assign [class="Chromium" instance="calendar.google.com"] workspace $ws1
 assign [class="Chromium" instance="web.whatsapp.com"] workspace $ws2
 assign [class="Google-chrome" instance="mail.google.com"] workspace $ws1
-assign [app_id="chrome-mail.google.com__-Profile_1"] workspace $ws1
+assign [app_id="^chrome-mail.google.com__-.*$"] workspace $ws1
 assign [class="Google-chrome" instance="calendar.google.com"] workspace $ws1
-assign [app_id="chrome-calendar.google.com__-Profile_1"] workspace $ws1
+assign [app_id="^chrome-calendar.google.com__-.*$"] workspace $ws1
 assign [class="Google-chrome" instance="web.whatsapp.com"] workspace $ws2
-assign [app_id="chrome-web.whatsapp.com__-Profile_1"] workspace $ws2
+assign [app_id="^chrome-web.whatsapp.com__-.*$"] workspace $ws2
 
 assign [class="Slack"] workspace $ws2
 assign [class="discord"] workspace $ws2
