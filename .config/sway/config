@@ -328,6 +328,8 @@ for_window [title="Meet -.*"] inhibit_idle visible
 # Inhibit idle when a slack call is visible
 for_window [title=".*Slack call.*"] inhibit_idle visible
 
+# Use floating mode for 'Open Folder' windows
+for_window [title="Open Folder"] floating enable
 
 # Start some applications on startup
 exec sway-startup
