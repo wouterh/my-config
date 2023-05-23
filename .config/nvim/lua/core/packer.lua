@@ -55,6 +55,7 @@ return require("packer").startup(function()
     branch = "0.1.x",
   }
   use {	"BurntSushi/ripgrep" }
+	use { 'numToStr/Comment.nvim' }
 
   -- Development
 	use "neovim/nvim-lspconfig"

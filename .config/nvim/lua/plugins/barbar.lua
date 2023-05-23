@@ -13,6 +13,8 @@ local opts = { noremap = true, silent = true }
 -- Move to previous/next
 map('n', '<F3>', '<Cmd>BufferPrevious<CR>', opts)
 map('n', '<F4>', '<Cmd>BufferNext<CR>', opts)
+map('i', '<F3>', '<Esc><Cmd>BufferPrevious<CR>', opts)
+map('i', '<F4>', '<Esc><Cmd>BufferNext<CR>', opts)
 -- Re-order to previous/next
 map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
 map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)

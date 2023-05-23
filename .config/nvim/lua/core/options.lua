@@ -34,6 +34,18 @@ local function add(value, str, sep)
   return str ~= '' and table.concat({ value, str }, sep) or value
 end
 
+-- Use the primary selection clipboard for the unnamed register
+opt.clipboard = 'unnamed'
+-- Shortcuts to copy to/paste from the system clipboard
+map('v', '<leader>y', '"+y', opts)
+map('n', '<leader>Y', '"+yg_', opts)
+map('n', '<leader>y', '"+y', opts)
+map('n', '<leader>yy', '"+yy', opts)
+map('n', '<leader>p', '"+p', opts)
+map('n', '<leader>P', '"+P', opts)
+map('v', '<leader>p', '"+p', opts)
+map('v', '<leader>P', '"+P', opts)
+
 if vim.fn.executable('rg') then
   vim.o.grepprg =
       [[rg --hidden --glob "!.git" --no-heading --smart-case --vimgrep --follow $*]]
