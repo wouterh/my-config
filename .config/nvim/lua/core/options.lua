@@ -25,6 +25,9 @@ local opts = { noremap = true, silent = true }
 -- Execute something in the shell
 map('n', '<F2>', ':!', {})
 map('i', '<F2>', '<ESC>:!', {})
+-- Toggle list mode
+map('n', '<F8>', ':set list!<CR>', {})
+map('i', '<F8>', '<ESC>:set list!<CR>a', {})
 
 -- Faster grep
 local function add(value, str, sep)

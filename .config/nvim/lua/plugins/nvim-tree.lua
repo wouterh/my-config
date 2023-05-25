@@ -2,7 +2,7 @@ local setup, nvimtree = pcall(require, "nvim-tree")
 if not setup then return end
 
 vim.cmd([[
-  nnoremap <C-b> :NvimTreeToggle<CR>
+  nnoremap <leader>b :NvimTreeToggle<CR>
 ]])
 
 -- local keymap = vim.keymap -- for conciseness
