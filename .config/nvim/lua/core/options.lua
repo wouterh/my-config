@@ -54,3 +54,18 @@ if vim.fn.executable('rg') then
       [[rg --hidden --glob "!.git" --no-heading --smart-case --vimgrep --follow $*]]
   vim.o.grepformat = add('%f:%l:%c:%m', vim.o.grepformat)
 end
+
+-- Text Width
+-- Huidige paragraaf herordenen volgens de huidige 'textwidth'
+map('n', '<C-T>', 'gqap', {})
+map('v', '<C-T>', 'gq', {})
+map('i', '<C-T>', '<C-O>gqap', {})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = '*',
+	command = 'set colorcolumn='
+})
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = '*.{py,rb,erb,js,ts,jsx,tsx,md}',
+	command = 'set colorcolumn=100'
+})
