@@ -69,3 +69,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	pattern = '*.{py,rb,erb,js,ts,jsx,tsx,md}',
 	command = 'set colorcolumn=100'
 })
+-- No textwidth for Markdown (some renderers are linebreak sensitive), but configure soft wrap properly.
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = '*.md',
+	command = 'set textwidth=0 | set wrap | set linebreak | set breakindent | set showbreak=>\\ '
+})

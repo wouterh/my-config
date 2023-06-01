@@ -56,7 +56,9 @@ return require("packer").startup(function()
 	}
 	use {	"BurntSushi/ripgrep" }
 	use { 'numToStr/Comment.nvim' }
-
+	use { 'ms-jpq/coq_nvim' }
+	use { 'ms-jpq/coq.artifacts' } 
+ 
 	-- Development
 	use "neovim/nvim-lspconfig"
 	use "lewis6991/gitsigns.nvim"             -- https://github.com/lewis6991/gitsigns.nvim
