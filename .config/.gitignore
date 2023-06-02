@@ -1,0 +1,12 @@
+/*
+!.gitignore
+!/alacritty
+!/i3
+!/mako
+!/nvim
+!/sway
+!/swaynag
+!/waybar
+!/wofi
+!/*.profile
+

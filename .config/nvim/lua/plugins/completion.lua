@@ -1,5 +1,5 @@
-vim.g.coq_settings = { 
-	auto_start= "shut-up"
+vim.g.coq_settings = {
+	auto_start = "shut-up"
 }
 
 local present, coq = pcall(require, 'coq')

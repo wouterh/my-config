@@ -7,11 +7,11 @@ opt.incsearch = true
 opt.mouse = 'na'
 opt.number = true
 opt.relativenumber = true
-opt.signcolumn = 'yes' 
+opt.signcolumn = 'yes'
 
 -- Indentatie
 opt.shiftwidth = 2
-opt.formatoptions='tcqr'
+opt.formatoptions = 'tcqr'
 
 -- How to show spaces and tabs in list mode
 opt.listchars = 'tab:→ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:·'
@@ -31,10 +31,10 @@ map('i', '<F8>', '<ESC>:set list!<CR>a', {})
 
 -- Faster grep
 local function add(value, str, sep)
-  sep = sep or ','
-  str = str or ''
-  value = type(value) == 'table' and table.concat(value, sep) or value
-  return str ~= '' and table.concat({ value, str }, sep) or value
+	sep = sep or ','
+	str = str or ''
+	value = type(value) == 'table' and table.concat(value, sep) or value
+	return str ~= '' and table.concat({ value, str }, sep) or value
 end
 
 -- Use the primary selection clipboard for the unnamed register
@@ -50,9 +50,9 @@ map('v', '<leader>p', '"+p', opts)
 map('v', '<leader>P', '"+P', opts)
 
 if vim.fn.executable('rg') then
-  vim.o.grepprg =
-      [[rg --hidden --glob "!.git" --no-heading --smart-case --vimgrep --follow $*]]
-  vim.o.grepformat = add('%f:%l:%c:%m', vim.o.grepformat)
+	vim.o.grepprg =
+	[[rg --hidden --glob "!.git" --no-heading --smart-case --vimgrep --follow $*]]
+	vim.o.grepformat = add('%f:%l:%c:%m', vim.o.grepformat)
 end
 
 -- Text Width
