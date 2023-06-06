@@ -53,6 +53,7 @@ lspconfig.gopls.setup(coq.lsp_ensure_capabilities({
 				unusedparams = true,
 			},
 			staticcheck = true,
+			buildFlags = { "-tags=integration" },
 		},
 	},
 }))
