@@ -74,3 +74,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	pattern = '*.md',
 	command = 'set textwidth=0 | set wrap | set linebreak | set breakindent | set showbreak=>\\ '
 })
+
+-- map j/k to gj/gk when there is no count given. Allows to move within wrapped lines with j/k
+map('n', 'j', 'v:count ? "j" : "gj"', { expr = true, noremap = true, silent = true })
+map('n', 'k', 'v:count ? "k" : "gk"', { expr = true, noremap = true, silent = true })
