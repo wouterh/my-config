@@ -25,3 +25,6 @@ indent_style = space
 
 [*.{yml,yaml}]
 indent_style = space
+
+[*.encrypted]
+insert_final_newline = false
