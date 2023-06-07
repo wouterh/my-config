@@ -10,6 +10,9 @@ null_ls.setup({
 			method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
 		}),
 		null_ls.builtins.formatting.prettier,
+		null_ls.builtins.diagnostics.golangci_lint.with({
+			extra_args = { "--fast" },
+		}),
 	},
 	on_attach = util.lsp_on_attach,
 })

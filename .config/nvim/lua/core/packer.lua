@@ -13,10 +13,10 @@ end
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 return require("packer").startup(function()
-	use "wbthomason/packer.nvim"          -- https://github.com/wbthomason/packer.nvim
+	use "wbthomason/packer.nvim" -- https://github.com/wbthomason/packer.nvim
 
 	-- Look and Feel
-	use ({ 'projekt0n/github-nvim-theme' })
+	use({ 'projekt0n/github-nvim-theme' })
 
 	-- Keybindings help
 	use {
@@ -34,13 +34,13 @@ return require("packer").startup(function()
 
 	-- Productivity
 	use { "romgrk/barbar.nvim", wants = "nvim-tree/nvim-web-devicons" } -- https://github.com/romgrk/barbar.nvim
-	use "nvim-lualine/lualine.nvim"       -- https://github.com/nvim-lualine/lualine.nvim
+	use "nvim-lualine/lualine.nvim"                                    -- https://github.com/nvim-lualine/lualine.nvim
 	use 'WhoIsSethDaniel/lualine-lsp-progress.nvim'
 
 	use {
-		"nvim-tree/nvim-tree.lua",          -- https://github.com/nvim-tree/nvim-tree.lua
+		"nvim-tree/nvim-tree.lua",    -- https://github.com/nvim-tree/nvim-tree.lua
 		requires = {
-			"nvim-tree/nvim-web-devicons",    -- https://github.com/nvim-tree/nvim-web-devicons
+			"nvim-tree/nvim-web-devicons", -- https://github.com/nvim-tree/nvim-web-devicons
 		},
 	}
 	use {
@@ -54,16 +54,16 @@ return require("packer").startup(function()
 		},
 		branch = "0.1.x",
 	}
-	use {	"BurntSushi/ripgrep" }
+	use { "BurntSushi/ripgrep" }
 	use { 'numToStr/Comment.nvim' }
 	use { 'ms-jpq/coq_nvim' }
-	use { 'ms-jpq/coq.artifacts' } 
- 
+	use { 'ms-jpq/coq.artifacts' }
+
 	-- Development
 	use "neovim/nvim-lspconfig"
-	use "lewis6991/gitsigns.nvim"             -- https://github.com/lewis6991/gitsigns.nvim
+	use "lewis6991/gitsigns.nvim"      -- https://github.com/lewis6991/gitsigns.nvim
 	use {
-		"nvim-treesitter/nvim-treesitter",      -- https://github.com/nvim-treesitter/nvim-treesitter
+		"nvim-treesitter/nvim-treesitter", -- https://github.com/nvim-treesitter/nvim-treesitter
 		run = function()
 			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 			ts_update()
@@ -88,9 +88,9 @@ return require("packer").startup(function()
 
 	-- Markdown
 	use {
-		"iamcco/markdown-preview.nvim", 
-		run = "cd app && npm install", 
-		ft = { "markdown" }, 
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		ft = { "markdown" },
 	}
 
 	if packer_bootstrap then
