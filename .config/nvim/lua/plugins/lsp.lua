@@ -87,3 +87,8 @@ lspconfig.lua_ls.setup(coq.lsp_ensure_capabilities({
 		},
 	},
 }))
+
+-- Protobuf language server
+lspconfig.bufls.setup(coq.lsp_ensure_capabilities({
+	on_attach = coreutil.lsp_on_attach,
+}))
