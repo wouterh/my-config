@@ -61,7 +61,8 @@ return require("packer").startup(function()
 
 	-- Development
 	use "neovim/nvim-lspconfig"
-	use "lewis6991/gitsigns.nvim"      -- https://github.com/lewis6991/gitsigns.nvim
+	use "lewis6991/gitsigns.nvim" -- https://github.com/lewis6991/gitsigns.nvim
+	use "tpope/vim-fugitive"
 	use {
 		"nvim-treesitter/nvim-treesitter", -- https://github.com/nvim-treesitter/nvim-treesitter
 		run = function()
