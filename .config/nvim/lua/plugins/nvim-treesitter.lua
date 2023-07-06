@@ -44,4 +44,9 @@ treesitter.setup {
 
 -- Workaround for bug in telescope: see
 -- https://github.com/nvim-telescope/telescope.nvim/issues/699#issuecomment-1159637962
-vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = "normal zx", })
+-- vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = "normal zx", })
+-- https://github.com/nvim-telescope/telescope.nvim/issues/699#issuecomment-1572977083
+vim.api.nvim_create_autocmd({ "BufEnter", "BufNew", "BufWinEnter" }, {
+	group = vim.api.nvim_create_augroup("ts_fold_workaround", { clear = true }),
+	command = "set foldexpr=nvim_treesitter#foldexpr()",
+})
