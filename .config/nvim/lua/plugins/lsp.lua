@@ -92,3 +92,13 @@ lspconfig.lua_ls.setup(coq.lsp_ensure_capabilities({
 lspconfig.bufls.setup(coq.lsp_ensure_capabilities({
 	on_attach = coreutil.lsp_on_attach,
 }))
+
+lspconfig.ccls.setup(coq.lsp_ensure_capabilities({
+	-- We don't want format on save for now
+	-- on_attach = coreutil.lsp_on_attach,
+	init_options = {
+		highlight = {
+			lsRanges = true,
+		}
+	}
+}))

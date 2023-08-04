@@ -77,6 +77,9 @@ return require("packer").startup(function()
 	use 'ray-x/go.nvim'
 	use 'ray-x/guihua.lua' -- recommended if need floating window support
 
+	-- C/C++
+	use 'jackguo380/vim-lsp-cxx-highlight'
+
 	-- Null LS for:
 	-- - prettier for JS/TS/JSON etc
 	-- - eslint

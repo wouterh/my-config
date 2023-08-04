@@ -12,3 +12,5 @@ ghtheme.setup({
 })
 
 vim.cmd('colorscheme github_light')
+
+vim.g.lsp_cxx_hl_light_bg = true
