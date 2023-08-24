@@ -27,6 +27,7 @@
 [core]
 	editor = nvim
 	ignorecase = false
+	excludesfile = /home/wouter/.gitignore.global
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
