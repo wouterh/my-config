@@ -2,4 +2,4 @@
 Description=Send notification to move
 
 [Service]
-ExecStart=/usr/bin/notify-send -u critical 'Beweeg!' 'Tijd om je rug wat te bewegen!'
+ExecStart=/usr/bin/notify-send -u critical 'Beweeg!' 'Tijd om je rug wat te bewegen!' --wait
