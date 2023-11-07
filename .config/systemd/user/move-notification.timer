@@ -1,0 +1,8 @@
+[Unit]
+Description=Send notification to move every 20 min
+
+[Timer]
+OnUnitActiveSec=20min
+
+[Install]
+WantedBy=timers.target
