@@ -3,6 +3,7 @@
 -- Add any additional options here
 vim.g.lsp_cxx_hl_light_bg = true
 
+-- Enable editorconfig
 vim.g.editorconfig = true
 
 -- Indentatie
@@ -12,6 +13,9 @@ vim.opt.tabstop = 2
 
 -- How to show spaces and tabs in list mode
 vim.opt.listchars = "tab:→ ,nbsp:␣,trail:•,extends:⟩,precedes:⟨,space:·"
+
+-- Do not hide anything
+vim.opt.conceallevel = 0
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
