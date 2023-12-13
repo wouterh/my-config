@@ -21,7 +21,12 @@ return {
       local luasnip = require("luasnip")
       local cmp = require("cmp")
 
-      opts.mapping = vim.tbl_extend("force", opts.mapping, {
+      opts.preselect = "None"
+      opts.completion = {
+        completeopt = "menu,menuone,noselect",
+      }
+      opts.mapping = {
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
@@ -45,7 +50,8 @@ return {
             fallback()
           end
         end, { "i", "s" }),
-      })
+      }
+      return opts
     end,
   },
 }
