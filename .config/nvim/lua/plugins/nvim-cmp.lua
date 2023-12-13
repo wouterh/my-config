@@ -26,6 +26,7 @@ return {
         completeopt = "menu,menuone,noselect",
       }
       opts.mapping = {
+        ["<C-Space>"] = cmp.mapping.complete(),
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -35,8 +36,6 @@ return {
           -- this way you will only jump inside the snippet region
           elseif luasnip.expand_or_jumpable() then
             luasnip.expand_or_jump()
-          elseif has_words_before() then
-            cmp.complete()
           else
             fallback()
           end
@@ -50,6 +49,7 @@ return {
             fallback()
           end
         end, { "i", "s" }),
+        ["<C-e>"] = cmp.mapping.abort(),
       }
       return opts
     end,
