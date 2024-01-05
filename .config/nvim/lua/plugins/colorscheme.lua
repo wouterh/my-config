@@ -12,6 +12,14 @@ return {
 			require("github-theme").setup(opts)
 		end
 	},
+	{
+		"folke/todo-comments.nvim",
+		opts = {
+			colors = {
+				hint = { "#10B981" },
+			},
+		},
+	},
 
 	-- Configure LazyVim to load github-theme
 	{
