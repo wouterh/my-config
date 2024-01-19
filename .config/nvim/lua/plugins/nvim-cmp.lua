@@ -34,7 +34,7 @@ return {
             cmp.select_next_item()
           -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
           -- this way you will only jump inside the snippet region
-          elseif luasnip.expand_or_jumpable() then
+          elseif luasnip.expand_or_locally_jumpable() then
             luasnip.expand_or_jump()
           else
             fallback()
@@ -49,7 +49,10 @@ return {
             fallback()
           end
         end, { "i", "s" }),
-        ["<C-e>"] = cmp.mapping.abort(),
+        ["<C-e>"] = cmp.mapping(function()
+          cmp.abort()
+          luasnip.unlink_current()
+        end, { "i", "s" }),
       }
       return opts
     end,
