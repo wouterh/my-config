@@ -294,7 +294,7 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym $mod+Alt+c exec clipman pick -t wofi
 
 # Open emoji picker
-bindsym $mod+Alt+Space exec bemoji -t
+bindsym $mod+Alt+Space exec bemoji -n
 
 # Assignments and layouts for specific apps
 for_window [title=".*WhatsApp.*"] workspace $ws2
