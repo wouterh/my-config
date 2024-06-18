@@ -26,3 +26,6 @@ map("i", "<F2>", "<ESC>:!", {})
 -- Toggle list mode
 map("n", "<F8>", ":set list!<CR>", {})
 map("i", "<F8>", "<ESC>:set list!<CR>a", {})
+
+-- Always use prettier for files it supports
+vim.g.lazyvim_prettier_needs_config = false
