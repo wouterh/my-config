@@ -6,7 +6,6 @@ return {
         github_light = {
           Whitespace = { fg = "#BBBBBB" },
           Delimiter = { fg = "#953800" },
-          FzfLuaFilePart = { fg = "Brown4" },
           FzfLuaFzfMatch = { fg = "MediumSpringGreen" },
         },
       },
