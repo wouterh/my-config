@@ -581,27 +581,50 @@ prompt_pure_async_git_aliases() {
 	print -- ${(j:|:)pullalias}  # join on pipe (for use in regex).
 }
 
+prompt_pure_pwd_in_jjgit() # echo "jj" or "git" if either is found in $PWD or its parent directories
+{ # using the shell is much faster than `git rev-parse --git-dir` or `jj root`
+  local D="/$PWD"
+  while test -n "$D" ; do
+    test -e "$D/.jj" && { echo jj ; return; }
+    test -e "$D/.git" && { echo git ; return; }
+    D="${D%/*}"
+  done
+}
+
+prompt_pure_jj_info() {
+	jj_prompt_template_raw ' "jj:[@ " ++ concat( separate(" ", format_short_change_id_with_hidden_and_divergent_info(self), format_short_commit_id(commit_id),
+       				   bookmarks, if(conflict, label("conflict", "conflict")) ) ) ++ "]\n" '
+}
+
 prompt_pure_async_vcs_info() {
 	setopt localoptions noshwordsplit
 
-	# configure vcs_info inside async task, this frees up vcs_info
-	# to be used or configured as the user pleases.
-	zstyle ':vcs_info:*' enable git
-	zstyle ':vcs_info:*' use-simple true
-	# only export three msg variables from vcs_info
-	zstyle ':vcs_info:*' max-exports 3
-	# export branch (%b), git toplevel (%R) and stash information via misc (%m)
-	zstyle ':vcs_info:git*' formats '%b' '%R' '%m'
-	zstyle ':vcs_info:git*' actionformats '%b|%K{red}%F{white}%a%f%k' '%R' '%m'
-	zstyle ':vcs_info:git*+set-message:*' hooks git-stash
-
-	vcs_info
-
+	local jjgit="$(prompt_pure_pwd_in_jjgit)"
 	local -A info
+
 	info[pwd]=$PWD
-	info[stash]=$vcs_info_msg_2_
-	info[top]=$vcs_info_msg_1_
-	info[branch]=$vcs_info_msg_0_
+
+  if test "$jjgit" = jj ; then
+		# Do nothing when jj, will be set in PS1 elsewhere
+		info[branch]="$(prompt_pure_jj_info)"
+	else
+		# configure vcs_info inside async task, this frees up vcs_info
+		# to be used or configured as the user pleases.
+		zstyle ':vcs_info:*' enable git
+		zstyle ':vcs_info:*' use-simple true
+		# only export three msg variables from vcs_info
+		zstyle ':vcs_info:*' max-exports 3
+		# export branch (%b), git toplevel (%R) and stash information via misc (%m)
+		zstyle ':vcs_info:git*' formats '%b' '%R' '%m'
+		zstyle ':vcs_info:git*' actionformats '%b|%K{red}%F{white}%a%f%k' '%R' '%m'
+		zstyle ':vcs_info:git*+set-message:*' hooks git-stash
+
+		vcs_info
+
+		info[stash]=$vcs_info_msg_2_
+		info[top]=$vcs_info_msg_1_
+		info[branch]=$vcs_info_msg_0_
+	fi
 
 	print -r - ${(@kvq)info}
 }
