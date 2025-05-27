@@ -37,6 +37,7 @@ plugins=(docker
 				 git-hubflow
 				 git-it-on
 				 iosctl
+				 jj
 				 oh-my-matrix
 				 npm
 				 react-native
