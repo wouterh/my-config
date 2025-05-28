@@ -591,9 +591,20 @@ prompt_pure_pwd_in_jjgit() # echo "jj" or "git" if either is found in $PWD or it
   done
 }
 
+prompt_pure_jj_desc() {
+	jj_prompt_template 'surround("", " ", self.description().first_line())'
+}
+
 prompt_pure_jj_info() {
-	jj_prompt_template_raw ' "jj:[@ " ++ concat( separate(" ", format_short_change_id_with_hidden_and_divergent_info(self), format_short_commit_id(commit_id),
-       				   bookmarks, if(conflict, label("conflict", "conflict")) ) ) ++ "]\n" '
+  local ref='self.change_id().shortest(3)'
+  local empty_color="$fg[green]"
+  local nonempty_color="$fg[magenta]"
+	local desc='coalesce(truncate_end(30, self.description().first_line(), "..."),"(empty description)")'
+
+	jj_prompt_template_raw "if(self.empty(), \"%{$empty_color%}\", \"%{$nonempty_color%}\") ++ \"@\" ++ $ref ++ \":\" ++ $desc "
+
+	# jj_prompt_template_raw ' "jj:[@ " ++ concat( separate(" ", format_short_change_id_with_hidden_and_divergent_info(self), format_short_commit_id(commit_id),
+       				   # bookmarks, if(conflict, label("conflict", "conflict")) ) ) ++ "]\n" '
 }
 
 prompt_pure_async_vcs_info() {
