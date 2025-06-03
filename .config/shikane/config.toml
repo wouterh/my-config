@@ -45,3 +45,24 @@ transform = "normal"
 adaptive_sync = false
 exec = ["swayws range --numeric 3 8 $SHIKANE_OUTPUT_NAME", "swayws move --numeric 10 $SHIKANE_OUTPUT_NAME"]
 
+[[profile]]
+name = "meeting-room"
+
+[[profile.output]]
+enable = true
+search = ["m=SAMSUNG", "s=0x01000E00", "v=Samsung Electric Company"]
+mode = "2560x1440@59.951Hz"
+position = "1920,0"
+scale = 1.0
+transform = "normal"
+adaptive_sync = false
+
+[[profile.output]]
+enable = true
+search = ["m=0xE48D", "s=", "v=AU Optronics"]
+mode = "1920x1080@60.052Hz"
+position = "0,0"
+scale = 1.0
+transform = "normal"
+adaptive_sync = false
+
