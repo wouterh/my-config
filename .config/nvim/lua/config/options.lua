@@ -29,3 +29,6 @@ map("i", "<F8>", "<ESC>:set list!<CR>a", {})
 
 -- Always use prettier for files it supports
 vim.g.lazyvim_prettier_needs_config = false
+
+-- Do not copy to system clipboard by default
+vim.opt.clipboard = ""
