@@ -1,0 +1,3 @@
+binds {
+    Mod+F11 hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+}
