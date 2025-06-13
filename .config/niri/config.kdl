@@ -448,14 +448,14 @@ binds {
 	Mod+Page_Down  { focus-workspace-down; }
 	Mod+U     { focus-workspace-down; }
 	// To move the currently selected window/column there: add Shift.
-	Mod+Shift+Left  { move-column-left; }
-	Mod+Shift+H     { move-column-left; }
-	Mod+Shift+Right { move-column-right; }
-	Mod+Shift+L     { move-column-right; }
-	Mod+Shift+Up    { move-window-up; }
-	Mod+Shift+K     { move-window-up; }
-	Mod+Shift+Down  { move-window-down; }
-	Mod+Shift+J     { move-window-down; }
+	Mod+Shift+Left  { move-column-left-or-to-monitor-left; }
+	Mod+Shift+H     { move-column-left-or-to-monitor-left; }
+	Mod+Shift+Right { move-column-right-or-to-monitor-right; }
+	Mod+Shift+L     { move-column-right-or-to-monitor-right; }
+	Mod+Shift+Up    { move-window-up-or-to-workspace-up; }
+	Mod+Shift+K     { move-window-up-or-to-workspace-up; }
+	Mod+Shift+Down  { move-window-down-or-to-workspace-down; }
+	Mod+Shift+J     { move-window-down-or-to-workspace-down; }
 	//
 	Mod+Shift+Home { move-column-to-monitor-left; }
 	Mod+Shift+Y    { move-column-to-monitor-left; }
