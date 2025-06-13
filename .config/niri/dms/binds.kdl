@@ -1,3 +1,4 @@
 binds {
+    Mod+D hotkey-overlay-title="Spotlight Bar: Open" { spawn "dms" "ipc" "call" "spotlight-bar" "open"; }
     Mod+F11 hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
 }

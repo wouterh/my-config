@@ -1,6 +1,6 @@
 #!/bin/bash
 
-swaymsg exec mako
+#swaymsg exec mako
 swaymsg exec dropbox start
 swaymsg exec -- wl-paste -t text --watch /home/wouter/bin/Linux/my-clipman
 swaymsg exec -- blueman-applet
