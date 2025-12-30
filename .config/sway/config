@@ -335,6 +335,9 @@ for_window [title=".*Slack call.*"] inhibit_idle visible
 # Use floating mode for 'Open Folder' windows
 for_window [title="Open Folder"] floating enable
 
+# Darktable 5.4 renders it's own statusbar but doesn't report it as a CSD
+for_window [app_id="darktable"] border none
+
 # Start some applications on startup
 exec sway-startup
 
