@@ -1,7 +1,9 @@
 * {
-	min-height: 16px;
+	min-height: 36px;
 	font-size: 14px;
-	font-family: FiraCode Nerd Font Mono, FontAwesome;
+	font-family:
+		FiraCode Nerd Font Mono,
+		FontAwesome;
 	border: 2px;
 	border-radius: 0px;
 }
@@ -52,7 +54,7 @@ window#waybar {
 }
 
 #custom-logout {
- font-size: 15px;
+	font-size: 15px;
 }
 
 #tray {
@@ -87,4 +89,3 @@ window#waybar {
 #workspaces button.urgent {
 	background: #8b0000;
 }
-

@@ -26,6 +26,10 @@
 		"format": "{name}"
 	},
 
+	"niri/workspaces": {
+		"format": "{name}"
+	},
+
 	"custom/clock": {
 		"interval": 10,
 		"exec": "date +\"%H:%M  %a  %d/%m\"",
