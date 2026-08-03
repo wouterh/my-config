@@ -137,15 +137,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 #  env DOTFILES=$DOTFILES DISABLE_UPDATE_PROMPT=$DISABLE_UPDATE_PROMPT zsh -f $DOTFILES/tools/check_for_upgrade.sh
 #fi
 
-if [[ -a $HOME/.config/yarn/global/node_modules/.bin ]]; then
-	export PATH="$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-fi
-
-if [[ -a $HOME/.yarn/bin ]]; then
-	export PATH="$HOME/.yarn/bin:$PATH"
-fi
-
-if [[ -a $HOME/.local/bin ]]; then
+if [[ -a $HOME/.local/bin && ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
 	export PATH="$HOME/.local/bin:$PATH"
 fi
 
