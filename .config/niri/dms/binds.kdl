@@ -1,4 +1,6 @@
 binds {
     Mod+D hotkey-overlay-title="Spotlight Bar: Open" { spawn "dms" "ipc" "call" "spotlight-bar" "open"; }
     Mod+F11 hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
+    Mod+N repeat=false hotkey-overlay-title="Workspace: Rename" { spawn "dms" "ipc" "call" "workspace-rename" "open"; }
+    Mod+Shift+N repeat=false { unset-workspace-name; }
 }
