@@ -2,5 +2,6 @@
 !/bin/
 !/.zsh.d/
 /bin/velero*
+/bin/kubectl
 # Unignore /.config, use .gitignore in there to ignore *most* of it
 !/.config/

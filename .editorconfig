@@ -19,6 +19,7 @@ indent_style = tab
 
 [*.md]
 indent_size = 4
+max_line_length = off
 
 [*.proto]
 indent_style = space
