@@ -2,13 +2,11 @@
   "currentThemeName": "amber",
   "cornerRadius": 12,
   "niriLayoutGapsOverride": 4,
-  "niriLayoutRadiusOverride": 4,
-  "niriLayoutBorderSize": 2,
+  "niriLayoutRadiusOverride": 8,
+  "niriLayoutBorderSize": 4,
   "clockFormat": "24h",
-  "nightModeEnabled": false,
   "barElevationEnabled": false,
   "blurEnabled": true,
-  "batteryPillPercentSign": false,
   "controlCenterShowMicPercent": true,
   "showWorkspaceIndex": true,
   "showWorkspaceName": true,
@@ -17,6 +15,7 @@
   "appDrawerSectionViewModes": {
     "apps": "list"
   },
+  "networkPreference": "ethernet",
   "cursorSettings": {
     "theme": "System Default",
     "size": 24,
@@ -36,8 +35,6 @@
   "soundNewNotification": false,
   "acLockTimeout": 600,
   "acPostLockMonitorTimeout": 600,
-  "gtkThemingEnabled": false,
-  "qtThemingEnabled": false,
   "osdPowerProfileEnabled": true,
   "powerMenuActions": [
     "reboot",
@@ -117,6 +114,32 @@
       "clickThrough": false
     }
   ],
+  "desktopClockCustomColor": {
+    "r": 1,
+    "g": 1,
+    "b": 1,
+    "a": 1,
+    "hsvHue": -1,
+    "hsvSaturation": 0,
+    "hsvValue": 1,
+    "hslHue": -1,
+    "hslSaturation": 0,
+    "hslLightness": 1,
+    "valid": true
+  },
+  "systemMonitorCustomColor": {
+    "r": 1,
+    "g": 1,
+    "b": 1,
+    "a": 1,
+    "hsvHue": -1,
+    "hsvSaturation": 0,
+    "hsvValue": 1,
+    "hslHue": -1,
+    "hslSaturation": 0,
+    "hslLightness": 1,
+    "valid": true
+  },
   "builtInPluginSettings": {
     "dms_settings_search": {
       "trigger": "?"
@@ -125,6 +148,5 @@
       "trigger": "cb"
     }
   },
-  "configVersion": 17,
-  "closeNiriOverviewOnWindowFocus": true
+  "configVersion": 18
 }
