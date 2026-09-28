@@ -4,3 +4,8 @@
 # Compilation databases for clangd
 compile_commands.json
 compile_flags.txt
+
+**/.claude/.cc-writes/
+**/scratch/**
+
+**/.claude/settings.local.json
