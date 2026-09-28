@@ -73,7 +73,5 @@
 	defaultBranch = main
 [include]
 	path = ~/.gitconfig.local
-[url "git@bitbucket.org:"]
-	insteadOf = https://bitbucket.org/
 [pull]
 	ff = only
