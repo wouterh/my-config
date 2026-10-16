@@ -7,5 +7,6 @@ compile_flags.txt
 
 **/.claude/.cc-writes/
 **/scratch/**
+**/.scratch/**
 
 **/.claude/settings.local.json
